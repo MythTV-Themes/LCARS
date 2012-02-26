@@ -1,0 +1,122 @@
+<mythuitheme>
+    
+    <window name="status">
+        
+        <imagetype name="background">
+            <filename>background2.png</filename>
+            <position>0,0</position>
+        </imagetype>
+        
+        <textarea name="pagetitle" from="basetextarea">
+            <area>20,15,130,100</area>
+            <font>baselargeblack</font>
+            <value>System Status</value>
+            <multiline>yes</multiline>
+            <align>allcenter</align>
+        </textarea>
+        
+<!--        <shape name="list_background">
+            <area>170,188,1095,517</area>
+            <type>roundbox</type>
+            <fill color="#9999ff"/>
+            <cornerradius>30</cornerradius>
+        </shape>
+-->        
+        <buttonlist name="category">
+            <area>170,50,1095,40</area>
+            <layout>horizontal</layout>
+            <spacing>4</spacing>
+            <buttonarea>15,0,1065,40</buttonarea>
+            <statetype name="buttonitem">
+                <state name="active">
+                    <area>0,0,204,40</area>
+                    <shape name="background" from="basewidgetshape">
+                        <cornerradius>20</cornerradius>
+                    </shape>
+                    <textarea name="buttontext" from="basetextarea">
+                        <area>0,0,204,40</area>
+                        <font>basesmallblack</font>
+                        <align>allcenter</align>
+                    </textarea>
+                </state>
+                <state name="selectedactive" from="active">
+                    <shape name="background" from="baseselectedwidgetshape">
+                        <cornerradius>20</cornerradius>
+                    </shape>
+                </state>
+                <state name="selectedinactive" from="active">
+                    <shape name="background" from="baseinactivewidgetshape">
+                        <cornerradius>20</cornerradius>
+                    </shape>
+                    <textarea name="buttontext">
+                        <font>basesmallblack</font>
+                    </textarea>
+                </state>
+            </statetype>
+            <statetype name="downscrollarrow">
+                <position>1055,10</position>
+                <state type="off">
+                    <imagetype name="dnon">
+                        <filename>lb-rtarrow-reg.png</filename>
+                    </imagetype>
+                </state>
+                <state type="full">
+                    <imagetype name="dnoff">
+                        <filename>lb-rtarrow-sel.png</filename>
+                    </imagetype>
+                </state>
+            </statetype>
+            <statetype name="upscrollarrow">
+                <position>0,10</position>
+                <state type="off">
+                    <imagetype name="upon">
+                        <filename>lb-ltarrow-reg.png</filename>
+                    </imagetype>
+                </state>
+                <state type="full">
+                    <imagetype name="upoff">
+                        <filename>lb-ltarrow-sel.png</filename>
+                    </imagetype>
+                </state>
+            </statetype>
+        </buttonlist>
+        
+        <buttonlist name="log" from="basebuttonlist2">
+            <area>185,180,1080,525</area>
+        </buttonlist>
+        
+        <textarea name="helplabel">
+            <area>20,193,130,31</area>
+            <value>Details:</value>
+            <font>basemediumblack</font>
+            <align>allcenter</align>
+        </textarea>
+        
+        <textarea name="helptext" from="basetextarea">
+            <area>17,233,136,177</area>
+            <value>This screen displays the status of various system components</value>
+            <align>top,hcenter</align>
+            <multiline>yes</multiline>
+            <font>baseinfoblack</font>
+        </textarea>
+        
+        <clock name="date">
+            <area>15,615,140,50</area> 
+	    <font>basesmallblack</font>
+	    <cutdown>no</cutdown>
+	    <format>dddd\nMMMM dd, yyyy</format>
+	    <align>allcenter</align>
+        </clock>
+        
+        <clock name="time">
+            <area>15,670,140,25</area>
+            <font>basesmallblack</font>
+            <align>center</align>
+            <secondflash>yes</secondflash>
+            <format>%TIME%</format>
+        </clock>
+        
+    </window>
+    
+</mythuitheme>
+

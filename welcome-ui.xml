@@ -1,0 +1,147 @@
+<mythuitheme>
+    
+    <window name="welcome_screen">
+        
+        <!--
+            First, define all the fonts we need on this screen
+        -->
+        
+        <font name="info" from="basesmall">
+            <color>#ffffff</color>
+            <size>16</size>
+            <bold>yes</bold>
+        </font>
+        
+        <font name="warning" from="basesmall">
+            <color>#ff0000</color>
+            <dropcolor>#000000</dropcolor>
+            <size>16</size>
+            <shadow>2,2</shadow>
+            <bold>yes</bold>
+        </font>
+        
+        <font name="buttons" from="basesmall">
+            <color>#ffff00</color>
+            <size>14</size>
+            <bold>yes</bold>
+        </font>
+        
+        
+        <imagetype name="background">
+            <filename>background2.png</filename>
+            <position>0,0</position>
+        </imagetype>
+        
+        <textarea name="title" from="basetextarea">
+            <area>170,15,1095,100</area>
+            <font>baselarge</font>
+            <align>allcenter</align>
+            <value>Welcome to MythTV</value>
+        </textarea>
+        
+        <!--
+            time
+        -->
+        
+        <clock name="date"> 
+            <area>15,615,140,50</area> 
+	    <font>basesmallblack</font>
+	    <cutdown>no</cutdown>
+	    <format>dddd\nMMMM dd, yyyy</format>
+	    <align>allcenter</align>
+	</clock> 
+
+        <clock name="time" from="date">
+            <area>15,670,140,25</area>
+            <format>%TIME%</format>
+            <secondflash>yes</secondflash>
+	</clock>
+        
+        <!--
+            current myth status
+        -->
+        <textarea name="status_text" from="basetextarea">
+            <area>170,180,1095,50</area>
+            <multiline>yes</multiline>
+            <font>info</font>
+            <align>hcenter</align>
+            <value>MythTV is idle and will shutdown shortly.</value>
+        </textarea>
+        
+        <!--
+            current recordings status
+        -->
+        <textarea name="recording_label" from="basetextarea">
+            <area>170,235,1095,30</area>
+            <font>basemedium</font>
+            <align>hcenter</align>
+            <value>Current Recording(s)</value>
+        </textarea>
+        
+        <textarea name="recording_text" from="status_text">
+            <area>170,270,1095,150</area>
+            <value>Retrieving Recording Status ...</value>
+        </textarea>
+        
+        <!--
+            next scheduled recording status
+        -->
+        <textarea name="scheduled_label" from="recording_label">
+            <area>170,425,1095,30</area>
+            <value>Next Scheduled Recording(s)</value>
+        </textarea>
+        
+        <textarea name="scheduled_text" from="recording_text">
+            <area>170,460,1095,175</area>
+            <value>Retrieving Scheduled Recordings ...</value>
+        </textarea>
+        
+        <!--
+            scheduled recordings conflict warning
+        -->
+        <textarea name="conflicts_text" from="basetextarea">
+            <area>170,640,1095,30</area>
+            <font>warning</font>
+            <align>hcenter</align>
+            <value>WARNING: There are conflicting scheduled recordings!</value>
+        </textarea>
+        
+        <!--
+            start frontend button
+        -->
+        <button name="startfrontend_button">
+            <area>567,675,300,30</area>
+            <statetype name="buttonstate">
+                <state name="active">
+                    <shape name="buttonbackground">
+                        <area>0,0,300,30</area>
+                        <type>roundbox</type>
+                        <fill color="#cc6666" />
+                        <cornerradius>15</cornerradius>
+                    </shape>
+                    <textarea name="text">
+                        <area>15,0,270,30</area>
+                        <align>allcenter</align>
+                        <font>basesmallblack</font>
+                        <font state="selected">basesmallblack</font>
+                        <font state="disabled">basesmallblack</font>
+                    </textarea>
+                </state>
+                
+                <state name="selected" from="active">
+                    <shape name="buttonbackground">
+                        <fill color="#ff9900" />
+                    </shape>
+                </state>
+                <state name="disabled" from="active">
+                    <shape name="buttonbackground">
+                        <fill color="#cc99cc" />
+                    </shape>
+                </state>
+                <state name="pushed" from="active" />
+            </statetype>
+        </button>
+        
+    </window>
+    
+</mythuitheme>

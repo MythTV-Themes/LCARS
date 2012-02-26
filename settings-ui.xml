@@ -1,0 +1,61 @@
+<mythuitheme>
+
+    <window name="rawsettingseditor">
+
+        <imagetype name="background">
+            <filename>LCARSSettingsbg.png</filename>
+            <position>0,0</position>
+        </imagetype>
+                                        
+        <textarea name="heading" from="basetextarea">
+            <area>100,40,1165,40</area>
+            <align>allcenter</align>
+            <font>baselarge</font>
+        </textarea>
+
+        <buttonlist name="settings" from="basebuttonlist">
+            <area>200,120,1030,410</area>
+            <layout>vertical</layout>
+            <spacing>5</spacing>
+            <scrollstyle>free</scrollstyle>
+            <wrapstyle>none</wrapstyle>
+            <buttonarea>0,0,1030,410</buttonarea>
+        </buttonlist>
+
+        <textarea name="label-text">
+            <area>204,550,392,30</area>
+            <font>basesmallgreen</font>
+            <align>left,vcenter</align>
+        </textarea>
+
+        <shape name="background1">
+            <area>475,550,750,30</area>
+            <type>roundbox</type>
+            <fill color="#FFFFFF" />
+            <cornerradius>4</cornerradius>
+        </shape>
+
+        <textedit name="settingvalue">
+            <area>475,550,750,30</area>
+            <imagetype name="cursor">
+                <filename>cursor.png</filename>
+            </imagetype>
+            <textarea name="text">
+                <area>5,0,740,30</area>
+                <font>basesmallblack</font>
+            </textarea>
+        </textedit>
+
+        <button name="cancel" from="basebutton">
+            <position>205,638</position>
+            <value>Cancel</value>
+        </button>
+    
+        <button name="save" from="basebutton">
+            <position>1075,638</position>
+            <value>Save</value>
+        </button>
+
+    </window>
+
+</mythuitheme>

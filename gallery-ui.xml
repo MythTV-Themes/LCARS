@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mythuitheme>
+    
+    <window name="gallery">
+        
+        <imagetype name="background">
+            <filename>background2.png</filename>
+            <position>0,0</position>
+        </imagetype>
+        
+        <textarea name="pagetitle" from="basetextarea">
+            <area>15,15,140,100</area>
+            <font>baselargeblack</font>
+            <value>Image Gallery</value>
+            <multiline>yes</multiline>
+            <align>center</align>
+        </textarea>
+        
+        <!-- optional - shows current image name -->
+        <textarea name="title" from="basetextarea">
+            <area>188,15,1095,50</area>
+            <cutdown>yes</cutdown>
+            <font>baselarge</font>
+            <align>center</align>
+        </textarea>
+        
+        <!-- optional - shows path to current image -->
+        <textarea name="breadcrumbs" from="basetextarea">
+            <area>188,65,1095,30</area>
+            <font>basemedium</font>
+            <align>center</align>
+        </textarea>
+        
+        <buttonlist name="images">
+            <area>170,180,1095,525</area>
+            <layout>grid</layout>
+            <spacing>7</spacing>
+            <buttonarea>10,0,1085,495</buttonarea>
+            <statetype name="buttonitem">
+                <state name="active">
+                    <area>0,0,147,160</area>
+                    <imagetype name="buttonbackground">
+                        <filename>gallery/frame.png</filename>
+                    </imagetype>
+                    <imagetype name="buttonimage">
+                        <area>11,10,126,115</area>
+                        <filename>shared/grid_noimage.png</filename>
+                        <preserveaspect>true</preserveaspect>
+                    </imagetype>
+                    <statetype name="nodetype">
+                        <position>90,70</position>
+                        <state name="subfolder">
+                            <imagetype name="icon">
+                                <area>0,0,70,70</area>
+                                <filename>shared/directory.png</filename>
+                                <preserveaspect>yes</preserveaspect>
+                            </imagetype>
+                        </state>
+                        <state name="upfolder">
+                            <imagetype name="icon">
+                                <area>0,0,70,70</area>
+                                <filename>shared/updirectory.png</filename>
+                                <preserveaspect>yes</preserveaspect>
+                            </imagetype>
+                        </state>
+                    </statetype>
+                    <statetype name="buttoncheck">
+                        <position>15,110</position>
+                        <showempty>yes</showempty>
+                        <state type="full">
+                            <imagetype name="marked">
+                                <filename>gallery-mark.png</filename>
+                            </imagetype>
+                        </state>
+                    </statetype>
+                    <textarea name="buttontext">
+                        <area>5,133,137,25</area>
+                        <font>baseinfoblack</font>
+                        <align>hcenter,bottom</align>
+                    </textarea>
+                    <textarea name="childcount" from="basetextarea">
+                        <area>85,100,80,25</area>
+                        <font>basesmallblack</font>
+                        <align>center</align>
+                    </textarea>
+                </state>
+                <state name="selectedactive" from="active">
+                    <imagetype name="buttonbackground">
+                        <filename>gallery/frame-sel.png</filename>
+                    </imagetype>
+                </state>
+            </statetype>
+            <statetype name="upscrollarrow">
+                <position>37,505</position>
+                <showempty>yes</showempty>
+                <state type="full">
+                    <imagetype name="upon">
+                        <filename>lb-uparrow-sel.png</filename>
+                    </imagetype>
+                </state>
+            </statetype>
+            <statetype name="downscrollarrow">
+                <position>10,505</position>
+                <showempty>yes</showempty>
+                <state type="full">
+                    <imagetype name="dnon">
+                        <filename>lb-dnarrow-sel.png</filename>
+                    </imagetype>
+                </state>
+            </statetype>
+        </buttonlist>
+        
+        <!-- optional - shows current position in grid eg '1 of 123' -->
+        <textarea name="position" from="basetextarea">
+            <area>855,115,308,26</area>
+            <align>allcenter</align>
+            <font>basesmallblack</font>
+        </textarea>
+        
+        <!-- optional - shows a message when no images are available
+             in the current directory -->
+        <textarea name="noimages" from="basetextarea">
+            <area>15,20,1250,680</area>
+            <font>basemedium</font>
+            <align>allcenter</align>
+        </textarea>
+        
+        <clock name="date">
+            <area>15,615,140,50</area> 
+	    <font>basesmallblack</font>
+	    <cutdown>no</cutdown>
+	    <format>dddd\nMMMM dd, yyyy</format>
+	    <align>allcenter</align>
+        </clock>
+        
+        <clock name="time">
+            <area>15,670,140,25</area>
+            <font>basesmallblack</font>
+            <align>center</align>
+            <secondflash>yes</secondflash>
+            <format>%TIME%</format>
+        </clock>
+        
+    </window>
+    
+</mythuitheme>

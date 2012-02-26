@@ -1,0 +1,682 @@
+<mythuitheme>
+    
+    <window name="netsearch">
+        
+        <imagetype name="background">
+            <filename>background.png</filename>
+            <position>0,0</position>
+        </imagetype>
+
+        <textarea name="pagetitle" from="basetextarea">
+            <area>20,15,130,100</area>
+            <multiline>true</multiline>
+            <font>baselargeblack</font>
+            <align>center</align>
+	    <value>Video Search</value>
+        </textarea>
+        
+        <clock name="date">
+            <area>15,615,140,50</area> 
+	    <font>basesmallblack</font>
+	    <cutdown>no</cutdown>
+	    <format>dddd\nMMMM dd, yyyy</format>
+	    <align>allcenter</align>
+        </clock>
+        
+        <clock name="time">
+            <area>15,670,140,25</area>
+            <font>basesmallblack</font>
+            <align>center</align>
+            <secondflash>yes</secondflash>
+            <format>%TIME%</format>
+        </clock>
+                
+        <textarea name="searchlab" from="basetextarea">
+            <font>basesmall</font>
+            <area>170,295,150,50</area>
+            <align>left,vcenter</align>
+            <value>Search Term:</value>
+        </textarea>
+        
+        <textedit name="search" from="basetextedit">
+            <position>300,295</position>
+        </textedit>
+        
+        <buttonlist name="sites" from="basebuttonlist">
+            <area>170,375,200,330</area>
+        </buttonlist>
+        
+        <buttonlist name="results" from="basebuttonlist">
+            <area>390,375,875,330</area>
+        </buttonlist>
+        
+        <imagetype name="preview">
+            <area>1075,10,190,190</area>
+            <preserveaspect>true</preserveaspect>
+        </imagetype>
+        
+        <textarea name="title" from="basetextarea">
+            <area>155,229,300,26</area>
+            <font>basemediumblack</font>
+            <align>allcenter</align>
+	</textarea>
+        
+        <textarea name="author" from="basetextarea">
+            <area>20,345,130,230</area>
+            <template>Author: %1</template>
+            <multiline>yes</multiline>
+            <font>basemediumblack</font>
+            <align>hcenter</align>
+        </textarea>
+        
+	<textarea name="filesize_str" from="basetextarea">
+            <area>850,229,318,26</area>
+            <template>Size: %1</template>
+            <align>allcenter</align>
+            <font>basemediumblack</font>
+        </textarea>
+        
+        <textarea name="description" from="basetextarea">
+            <area>170,15,895,100</area>
+            <multiline>yes</multiline>
+            <align>justify</align>
+            <font>basemedium</font>
+        </textarea>
+        
+        <textarea name="nosites" from="description">
+            <value>Can't find any search scripts!  This usually indicates missing search script prerequisities.  Try running a script from the command line.</value>
+        </textarea>
+        
+    </window>
+    
+    <window name="treeeditor">
+        
+        <imagetype name="background">
+            <filename>background2.png</filename>
+            <position>0,0</position>
+        </imagetype>
+
+	<textarea name="title" from="basetextarea">
+            <area>15,15,140,100</area>
+            <multiline>true</multiline>
+            <font>basemediumblack</font>
+            <align>center</align>
+            <value>Manage Site Subscriptions</value>
+        </textarea>
+        
+        <clock name="date">
+            <area>15,615,140,50</area> 
+	    <font>basesmallblack</font>
+	    <cutdown>no</cutdown>
+	    <format>dddd\nMMMM dd, yyyy</format>
+	    <align>allcenter</align>
+        </clock>
+        
+        <clock name="time">
+            <area>15,670,140,25</area>
+            <font>basesmallblack</font>
+            <align>center</align>
+            <secondflash>yes</secondflash>
+            <format>%TIME%</format>
+        </clock>
+                
+        <buttonlist name="grabbers" from="basebuttonlist">
+            <area>170,180,1095,535</area>
+        </buttonlist>
+        
+    </window>
+    
+    <window name="rsseditor">
+        
+        <imagetype name="background">
+            <filename>background.png</filename>
+            <position>0,0</position>
+        </imagetype>
+
+        <textarea name="pagetitle" from="basetextarea">
+            <area>20,15,130,100</area>
+            <multiline>true</multiline>
+            <font>basemediumblack</font>
+            <align>center</align>
+	    <value>RSS Subscriptions</value>
+        </textarea>
+        
+        <clock name="date">
+            <area>15,615,140,50</area> 
+	    <font>basesmallblack</font>
+	    <cutdown>no</cutdown>
+	    <format>dddd\nMMMM dd, yyyy</format>
+	    <align>allcenter</align>
+        </clock>
+        
+        <clock name="time">
+            <area>15,670,140,25</area>
+            <font>basesmallblack</font>
+            <align>center</align>
+            <secondflash>yes</secondflash>
+            <format>%TIME%</format>
+        </clock>
+                
+        <button name="edit" from="basebutton">
+            <position>170,665</position>
+            <value>Edit</value>
+        </button>
+        
+        <button name="new" from="basebutton">
+            <position>642,665</position>
+            <value>New</value>
+        </button>
+        
+        <button name="delete" from="basebutton">
+            <position>1115,665</position>
+            <value>Remove</value>
+        </button>
+        
+        <buttonlist name="sites" from="basebuttonlist">
+            <area>170,295,1095,353</area>
+        </buttonlist>
+        
+        <imagetype name="preview">
+            <area>1075,10,190,190</area>
+            <preserveaspect>true</preserveaspect>
+        </imagetype>
+        
+        <textarea name="title" from="basetextarea">
+            <area>155,229,300,26</area>
+            <font>basemediumblack</font>
+            <align>allcenter</align>
+	</textarea>
+        
+        <textarea name="author" from="basetextarea">
+            <area>20,345,130,230</area>
+            <template>Author: %1</template>
+            <multiline>yes</multiline>
+            <font>basemediumblack</font>
+            <align>hcenter</align>
+        </textarea>
+        
+        <textarea name="description" from="basetextarea">
+            <area>170,15,895,100</area>
+            <multiline>yes</multiline>
+            <align>justify</align>
+            <font>basemedium</font>
+        </textarea>
+	</window>
+    
+    <window name="rsseditpopup">
+        
+        <imagetype name="background">
+            <filename>background2.png</filename>
+            <position>0,0</position>
+        </imagetype>
+
+        <textarea name="titlelab" from="basetextarea">
+            <font>baselarge</font>
+            <area>170,15,1095,103</area>
+            <align>allcenter</align>
+            <value>Manage RSS Subscriptions</value>
+        </textarea>
+        
+        <clock name="date">
+            <area>15,615,140,50</area> 
+	    <font>basesmallblack</font>
+	    <cutdown>no</cutdown>
+	    <format>dddd\nMMMM dd, yyyy</format>
+	    <align>allcenter</align>
+        </clock>
+        
+        <clock name="time">
+            <area>15,670,140,25</area>
+            <font>basesmallblack</font>
+            <align>center</align>
+            <secondflash>yes</secondflash>
+            <format>%TIME%</format>
+        </clock>
+                
+        <textarea name="titlelabel" from="basetextarea">
+            <area>170,190,200,30</area>
+            <align>right,vcenter</align>
+            <value>Feed Name:</value>
+        </textarea>
+        
+        <textedit name="title" from="basewidetextedit">
+            <position>385,180</position>
+        </textedit>
+        
+        <textarea name="urllabel" from="basetextarea">
+            <area>170,250,200,30</area>
+            <align>right,vcenter</align>
+            <value>Feed URL:</value>
+        </textarea>
+        
+        <textedit name="url" from="basewidetextedit">
+            <position>385,240</position>
+        </textedit>
+        
+        <textarea name="desclabel" from="basetextarea">
+            <area>170,310,200,30</area>
+            <align>right,vcenter</align>
+            <value>Site Description:</value>
+        </textarea>
+        
+        <textedit name="description" from="basewidetextedit">
+            <position>385,300</position>
+        </textedit>
+        
+        <textarea name="authorlabel" from="basetextarea">
+            <area>170,370,200,30</area>
+            <align>right,vcenter</align>
+            <value>Feed Author:</value>
+        </textarea>
+        
+        <textedit name="author" from="basewidetextedit">
+            <position>385,360</position>
+        </textedit>
+        
+        <checkbox name="download" from="basecheckbox">
+            <position>385,430</position>
+        </checkbox>
+        
+        <textarea name="downloadlabel" from="basetextarea">
+            <area>435,435,400,28</area>
+            <value>Download this feed automatically</value>
+        </textarea>
+        
+        <imagetype name="preview">
+            <area>385,480,90,90</area>
+        </imagetype>
+        
+        <button name="preview_browse" from="basebutton">
+            <position>642,505</position>
+            <value>Choose Image</value>
+        </button>
+        
+        <button name="cancel" from="basebutton">
+            <position>170,665</position>
+            <value>Cancel</value>
+        </button>
+        
+        <button name="ok" from="basebutton">
+            <position>1115,665</position>
+            <value>Save</value>
+        </button>
+        
+    </window>
+    
+    <window name="tree">
+        
+        <imagetype name="background">
+            <filename>background.png</filename>
+            <position>0,0</position>
+        </imagetype>
+        
+        <textarea name="pagetitle" from="basetextarea">
+            <area>15,15,140,100</area>
+            <multiline>true</multiline>
+            <font>baselargeblack</font>
+            <align>center</align>
+	    <value>Video List</value>
+        </textarea>
+        
+        <clock name="date">
+            <area>15,615,140,50</area> 
+	    <font>basesmallblack</font>
+	    <cutdown>no</cutdown>
+	    <format>dddd\nMMMM dd, yyyy</format>
+	    <align>allcenter</align>
+        </clock>
+        
+        <clock name="time">
+            <area>15,670,140,25</area>
+            <font>basesmallblack</font>
+            <align>center</align>
+            <secondflash>yes</secondflash>
+            <format>%TIME%</format>
+        </clock>
+                
+        <buttontree name="videos">
+            <area>170,295,1095,410</area>
+            <numlists>2</numlists>
+            <spacing>10</spacing>
+            <buttonlist name="listtemplate" from="basebuttonlist" />
+        </buttontree>
+        
+        <textarea name="title" from="basetextarea">
+            <area>155,229,300,26</area>
+            <font>basemediumblack</font>
+            <align>allcenter</align>
+        </textarea>
+                
+        <textarea name="author" from="basetextarea">
+            <area>20,345,130,230</area>
+            <template>Author: %1</template>
+            <multiline>yes</multiline>
+            <font>basemediumblack</font>
+            <align>hcenter</align>
+        </textarea>
+                
+        <textarea name="description" from="basetextarea">
+            <area>170,15,895,100</area>
+            <multiline>yes</multiline>
+            <align>justify</align>
+            <font>basemedium</font>
+        </textarea>
+                        
+        <imagetype name="preview">
+            <area>1115,10,150,225</area>
+            <preserveaspect>true</preserveaspect>
+        </imagetype>
+
+        <textarea name="filesize_str" from="basetextarea">
+            <area>850,229,318,26</area>
+            <template>Size: %1</template>
+            <align>allcenter</align>
+            <font>basemediumblack</font>
+        </textarea>
+                
+        <textarea name="rating" from="basetextarea">
+            <area>635,229,208,26</area>
+            <align>allcenter</align>
+	    <template>User Rating: %1</template>
+            <font>basemediumblack</font>
+        </textarea>
+        
+        <textarea name="nosites" from="description">
+            <align>allcenter</align>
+            <value>You haven't added any Sites/RSS Feeds yet!  To add a site, press MENU, then choose "Scan/Manage Subscriptions," then "Manage Site Subscriptions."</value>
+        </textarea>
+    </window>
+    
+    <window name="browser">
+        
+        <imagetype name="background">
+            <filename>background.png</filename>
+            <position>0,0</position>
+        </imagetype>
+        
+        <textarea name="pagetitle" from="basetextarea">
+            <area>15,15,140,100</area>
+            <multiline>true</multiline>
+            <font>baselargeblack</font>
+            <value>Video Browser</value>
+            <align>center</align>
+        </textarea>
+        
+        <clock name="date">
+            <area>15,615,140,50</area> 
+	    <font>basesmallblack</font>
+	    <cutdown>no</cutdown>
+	    <format>dddd\nMMMM dd, yyyy</format>
+	    <align>allcenter</align>
+        </clock>
+       
+        <clock name="time">
+            <area>15,670,140,25</area>
+            <font>basesmallblack</font>
+            <align>center</align>
+            <secondflash>yes</secondflash>
+            <format>%TIME%</format>
+        </clock>
+  
+        <buttonlist name="videos">
+            <area>165,15,1100,199</area>
+            <layout>horizontal</layout>
+            <scrollstyle>center</scrollstyle>
+            <wrapstyle>items</wrapstyle>
+            <spacing>8</spacing>
+            <buttonarea>40,0,1000,199</buttonarea>
+            <statetype name="buttonitem">
+                <state name="active">
+                    <area>0,0,135,189</area>
+                    <imagetype name="buttonimage">
+                        <area>10,15,133,187</area>
+                        <alpha>100</alpha>
+                        <preserveaspect>true</preserveaspect>
+                        <filename>shared/grid_noimage.png</filename>
+                    </imagetype>
+                    <statetype name="nodetype">
+                        <position>60,140</position>
+                        <state name="subfolder">
+                            <imagetype name="icon">
+                                <area>0,0,70,70</area>
+                                <filename>shared/directory.png</filename>
+                                <preserveaspect>yes</preserveaspect>
+                            </imagetype>
+                        </state>
+                        <state name="upfolder">
+                            <imagetype name="icon">
+                                <area>0,0,70,70</area>
+                                <filename>shared/updirectory.png</filename>
+                                <preserveaspect>yes</preserveaspect>
+                            </imagetype>
+                        </state>
+                    </statetype>
+                </state>
+                <state name="selectedactive" from="active">
+                    <imagetype name="buttonimage">
+                        <alpha>255</alpha>
+                    </imagetype>
+                </state>
+            </statetype>
+            <statetype name="upscrollarrow">
+                <position>0,80</position>
+                <showempty>yes</showempty>
+                <state type="full">
+                    <imagetype name="upon">
+                        <filename>left_arrow.png</filename>
+                    </imagetype>
+                </state>
+            </statetype>
+            <statetype name="downscrollarrow">
+                <position>1050,80</position>
+                <showempty>yes</showempty>
+                <state type="full">
+                    <imagetype name="dnon">
+                        <filename>right_arrow.png</filename>
+                    </imagetype>
+                </state>
+            </statetype>
+        </buttonlist>
+        
+        <imagetype name="preview">
+            <area>168,300,321,405</area>
+            <mask>videomask.png</mask>
+            <filename>mv_browse_nocover_large.png</filename>
+            <preserveaspect>true</preserveaspect>
+        </imagetype>
+	
+        <textarea name="title" from="basetextarea">
+            <area>155,230,300,25</area>
+            <font>basemediumblack</font>
+            <align>allcenter</align>
+        </textarea>
+        
+        <textarea name="author" from="basetextarea">
+            <area>20,350,130,170</area>
+            <template>Author: %1</template>
+            <multiline>yes</multiline>
+            <font>basemediumblack</font>
+            <align>hcenter</align>
+        </textarea>
+                
+        <textarea name="description" from="basetextarea">
+            <area>510,310,745,385</area>
+            <multiline>yes</multiline>
+            <align>justify</align>
+            <font>basemedium</font>
+        </textarea>
+      
+        <textarea name="duration" from="basetextarea">
+            <area>850,229,318,26</area>
+            <template>Runtime: %1</template>
+            <align>allcenter</align>
+            <font>basemediumblack</font>
+        </textarea>
+        
+        <textarea name="rating" from="basetextarea">
+            <area>635,229,208,26</area>
+            <align>allcenter</align>
+            <template>User Rating: %1</template>
+            <font>basemediumblack</font>
+        </textarea>
+	
+        <textarea name="nosites" from="description">
+            <align>hcenter,vcenter</align>
+            <value>You haven't added any Sites/RSS Feeds yet!  To add a site, press MENU, then choose "Scan/Manage Subscriptions," then "Manage Site Subscriptions."</value>
+        </textarea>
+    </window>
+    
+    <window name="gallery">
+        
+        <imagetype name="background">
+            <filename>background2.png</filename>
+            <position>0,0</position>
+        </imagetype>
+        
+        <textarea name="pagetitle" from="basetextarea">
+            <area>20,15,130,100</area>
+            <multiline>true</multiline>
+            <font>baselargeblack</font>
+            <value>Video Gallery</value>
+            <align>center</align>
+        </textarea>
+        
+        <clock name="date">
+            <area>15,615,140,50</area> 
+	    <font>basesmallblack</font>
+	    <cutdown>no</cutdown>
+	    <format>dddd\nMMMM dd, yyyy</format>
+	    <align>allcenter</align>
+        </clock>
+        
+        <clock name="time">
+            <area>15,670,140,25</area>
+            <font>basesmallblack</font>
+            <align>center</align>
+            <secondflash>yes</secondflash>
+            <format>%TIME%</format>
+        </clock>
+        
+        <buttonlist name="videos">
+            <area>170,180,1095,532</area>
+            <layout>grid</layout>
+            <spacing>9</spacing>
+            <buttonarea>0,0,1095,517</buttonarea>
+            <statetype name="buttonitem">
+                <state name="active">
+                    <area>0,0,175,160</area>
+                    <shape name="buttonbackground">
+                        <area>0,0,175,160</area>
+                        <type>roundbox</type>
+                        <fill color="#cc6666" />
+                        <cornerradius>30</cornerradius>
+                    </shape>
+                    <imagetype name="buttonimage">
+                        <area>10,8,155,125</area>
+                        <alpha>100</alpha>
+                        <filename>shared/grid_noimage.png</filename>
+                        <preserveaspect>true</preserveaspect>
+                    </imagetype>
+                    <statetype name="nodetype">
+                        <position>90,70</position>
+                        <state name="subfolder">
+                            <imagetype name="icon">
+                                <area>0,0,70,70</area>
+                                <filename>shared/directory.png</filename>
+                                <preserveaspect>yes</preserveaspect>
+                            </imagetype>
+                        </state>
+                        <state name="upfolder">
+                            <imagetype name="icon">
+                                <area>0,0,70,70</area>
+                                <filename>shared/updirectory.png</filename>
+                                <preserveaspect>yes</preserveaspect>
+                            </imagetype>
+                        </state>
+                    </statetype>
+                    <textarea name="buttontext">
+                        <area>10,133,155,25</area>
+                        <font>menufont</font>
+                        <align>hcenter,bottom</align>
+                    </textarea>
+                    <textarea name="childcount" from="basetextarea">
+                        <area>60,95,80,25</area>
+                        <font>basesmallblack</font>
+                        <align>right</align>
+                    </textarea>
+                </state>
+                <state name="selectedactive" from="active">
+                    <shape name="buttonbackground">
+                        <fill color="#ff9900" />
+                    </shape>
+                    <imagetype name="buttonimage">
+                        <area>10,8,155,125</area>
+                        <alpha>255</alpha>
+                        <filename>shared/grid_noimage.png</filename>
+                        <preserveaspect>true</preserveaspect>
+                    </imagetype>
+                </state>
+            </statetype>
+            <statetype name="upscrollarrow">
+                <position>0,504</position>
+                <showempty>yes</showempty>
+                <state type="full">
+                    <imagetype name="upon">
+                        <filename>lb-uparrow-sel.png</filename>
+                    </imagetype>
+                </state>
+            </statetype>
+            <statetype name="downscrollarrow">
+                <position>35,504</position>
+                <showempty>yes</showempty>
+                <state type="full">
+                    <imagetype name="dnon">
+                        <filename>lb-dnarrow-sel.png</filename>
+                    </imagetype>
+                </state>
+            </statetype>
+        </buttonlist>
+        
+        <textarea name="title" from="basetextarea">
+            <area>155,115,300,26</area>
+            <font>basemediumblack</font>
+            <align>allcenter</align>
+        </textarea>
+                
+        <textarea name="author" from="basetextarea">
+            <area>20,231,130,230</area>
+            <template>Author: %1</template>
+            <multiline>yes</multiline>
+            <font>basemediumblack</font>
+            <align>hcenter</align>
+        </textarea>
+                
+        <textarea name="description" from="basetextarea">
+            <area>170,15,1095,100</area>
+            <multiline>yes</multiline>
+            <align>justify</align>
+            <font>basemedium</font>
+        </textarea>
+        
+        <textarea name="filesize_str" from="basetextarea">
+            <area>850,115,318,26</area>
+            <template>Size: %1</template>
+            <align>allcenter</align>
+            <font>basemediumblack</font>
+        </textarea>
+                
+        <textarea name="rating" from="basetextarea">
+            <area>635,115,208,26</area>
+            <align>allcenter</align>
+            <template>User Rating: %1</template>
+            <font>basemediumblack</font>
+        </textarea>
+        
+        <textarea name="nosites" from="description">
+            <multiline>yes</multiline>
+            <align>hcenter,vcenter</align>
+            <value>You haven't added any Sites/RSS Feeds yet!  To add a site, press MENU, then choose "Scan/Manage Subscriptions," then "Manage Site Subscriptions."</value>
+        </textarea>
+    </window>
+    
+</mythuitheme>

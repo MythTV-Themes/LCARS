@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mythuitheme>
+    
+    <window name="news">
+        
+        <imagetype name="background">
+            <filename>background.png</filename>
+            <area>0,0,1280,720</area>
+        </imagetype>
+        
+        <textarea name="pagetitle" from="basetextarea">
+            <area>15,15,140,50</area>
+            <font>baselargeblack</font>
+            <value>News Feeds</value>
+            <align>center</align>
+        </textarea>
+        
+        <buttonlist name="siteslist" from="basebuttonlist">
+            <area>170,295,377,410</area>
+            <showarrow>yes</showarrow>
+        </buttonlist>
+        
+        <buttonlist name="articleslist" from="basebuttonlist">
+            <area>555,295,710,410</area>
+            <showarrow>no</showarrow>
+        </buttonlist>
+        
+        <textarea name="nosites" from="basetextarea">
+            <area>170,15,1095,105</area>
+            <align>allcenter</align>
+            <multiline>yes</multiline>
+        </textarea>
+        
+        <textarea name="title" from="basetextarea">
+            <area>170,15,890,50</area>
+            <font>baselarge</font>
+            <multiline>yes</multiline>
+        </textarea>
+        
+        <textarea name="description" from="basetextarea">
+            <area>170,65,890,125</area>
+            <multiline>yes</multiline>
+        </textarea>
+        
+        <textarea name="updated" from="basetextarea">
+            <area>170,195,890,25</area>
+        </textarea>
+        
+        
+        <imagetype name="thumbnail">
+            <area>1080,65,160,135</area>
+            <preserveaspect>true</preserveaspect>
+        </imagetype>
+        
+        <imagetype name="enclosures">
+            <filename>enclosures.png</filename>
+            <position>1080,15</position>
+        </imagetype>
+        
+        <imagetype name="download">
+            <filename>need-download.png</filename>
+            <position>1208,15</position>
+        </imagetype>
+        
+        <imagetype name="ispodcast">
+            <filename>podcast.png</filename>
+            <position>1208,15</position>
+        </imagetype>
+        
+        <clock name="date">
+            <area>15,615,140,50</area> 
+	    <font>basesmallblack</font>
+	    <cutdown>no</cutdown>
+	    <format>dddd\nMMMM dd, yyyy</format>
+	    <align>allcenter</align>
+        </clock>
+        
+        <clock name="time">
+            <area>15,670,140,25</area>
+            <font>basesmallblack</font>
+            <align>center</align>
+            <secondflash>yes</secondflash>
+            <format>%TIME%</format>
+        </clock>
+        
+    </window>
+    
+    <window name="editor">
+        
+        <imagetype name="background">
+            <filename>LCARSSettingsbg.png</filename>
+            <area>0,0,1280,720</area>
+        </imagetype>
+        
+        <textarea name="title" from="basetextarea">
+            <font>baselarge</font>
+            <area>200,40,1026,50</area>
+            <align>allcenter</align>
+        </textarea>
+        
+        <textarea name="namelabel" from="basetextarea">
+            <area>335,252,100,30</area>
+            <align>right,vcenter</align>
+        </textarea>
+        
+        <textedit name="name" from="basewidetextedit">
+            <position>450,242</position>
+        </textedit>
+        
+        <textarea name="urllabel" from="basetextarea">
+            <area>335,332,100,30</area>
+            <align>right,vcenter</align>
+        </textarea>
+        
+        <textedit name="url" from="basewidetextedit">
+            <position>450,322</position>
+        </textedit>
+        
+        <textarea name="iconlabel" from="basetextarea">
+            <area>335,412,100,30</area>
+            <align>right,vcenter</align>
+        </textarea>
+        
+        <textedit name="icon" from="basewidetextedit">
+            <position>450,402</position>
+        </textedit>
+        
+        <checkbox name="podcast_check" from="basecheckbox">
+            <position>450,482</position>
+        </checkbox>
+        
+        <textarea name="podcastlabel" from="basetextarea">
+            <area>285,482,150,30</area>
+            <align>right,vcenter</align>
+        </textarea>
+        
+        <button name="cancel" from="basebutton">
+            <position>275,600</position>
+            <value>Cancel</value>
+        </button>
+        
+        <button name="ok" from="basebutton">
+            <position>1000,600</position>
+            <value>Ok</value>
+        </button>
+        
+    </window>
+    
+    <window name="config">
+        
+        <imagetype name="background">
+            <filename>LCARSSettingsbg.png</filename>
+            <area>0,0,1280,720</area>
+        </imagetype>
+        
+        <textarea name="header" from="basetextarea">
+            <font>baselarge</font>
+            <area>200,40,1026,50</area>
+            <align>allcenter</align>
+            <value>News Feeds Settings</value>
+        </textarea>
+        
+        
+        <buttonlist name="category" from="basebuttonlist">
+            <area>220,108,400,490</area>
+        </buttonlist>
+        
+        <buttonlist name="sites" from="basebuttonlist">
+            <area>630,108,600,490</area>
+            <showarrow>no</showarrow>
+        </buttonlist>
+        
+        <textarea name="context_switch" from="basetextarea">
+            <area>20,550,760,50</area>
+            <multiline>yes</multiline>
+        </textarea>
+        
+        <textarea name="help" from="basetextarea">
+            <area>20,500,760,150</area>
+            <multiline>yes</multiline>
+        </textarea>
+        
+    </window>
+    
+</mythuitheme>

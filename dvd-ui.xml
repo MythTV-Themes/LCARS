@@ -1,0 +1,307 @@
+<mythuitheme>
+    
+    <!-- The dvd ripping/transcoding screen -->
+    <window name="dvd_rip">
+        <imagetype name="background">
+            <area>0,0,1280,720</area>
+            <filename>background2.png</filename>
+        </imagetype>
+        
+        <textarea name="title" from="basetextarea">
+            <font>baselarge</font>
+            <area>170,15,1095,93</area>
+            <align>allcenter</align>
+            <value>Rip/Transcode</value>
+        </textarea>
+        
+        <textarea name="pagetitle" from="basetextarea">
+            <font>baselargeblack</font>
+            <area>20,15,130,93</area>
+            <align>allcenter</align>
+            <value>Import DVD</value>
+        </textarea>
+        
+        <!--
+            Context 1 & 2
+            Warnings or Status Messages
+            -->
+        
+        <textarea name="warning" from="basetextarea">
+            <multiline>yes</multiline>
+            <area>170,170,1095,300</area>
+            <align>allcenter</align>
+        </textarea>
+        
+        <!--
+            Context 3
+            Browse active jobs
+            -->
+        
+        <textarea name="overall_text" from="basetextarea">
+            <area>170,180,1095,30</area>
+            <align>allcenter</align>
+        </textarea>
+        
+        <textarea name="job_text" from="basetextarea">
+            <area>170,330,1095,30</area>
+            <align>allcenter</align>
+        </textarea>
+        
+        <textarea name="numbjobs" from="basetextarea">
+            <area>170,480,1095,30</area>
+            <value>Job 1 of 1</value>
+            <align>allcenter</align>
+        </textarea>
+        
+        <progressbar name="overall_progress" from="baseprogressbar">
+            <position>450,220</position>
+        </progressbar>
+        
+        <progressbar name="job_progress" from="baseprogressbar">
+            <position>450,370</position>
+        </progressbar>
+        <!--
+        <button name="prev" from="basebutton">
+            <position>320,575</position>
+            <font>basemediumblack</font>
+            <value>Previous Job</value>
+            <multiline>yes</multiline>
+        </button>
+
+        <button name="next" from="basebutton">
+            <position>965,575</position>
+            <font>basemediumblack</font>
+            <value>Next Job</value>
+            <multiline>yes</multiline>
+        </button>
+-->
+        <button name="next">
+            <area>485,435,37,64</area>
+            <statetype name="buttonstate">
+                <state name="active">
+                    <imagetype name="background">
+                        <filename>right_arrow.png</filename>
+                    </imagetype>
+                </state>
+                <state name="selected" from="active">
+                    <imagetype name="background">
+                        <filename>right_arrow_selected.png</filename>
+                    </imagetype>
+                </state>
+                <state name="disabled" from="active" />
+                <state name="pushed" from="active">
+                    <imagetype name="background">
+                        <filename>right_arrow_pushed.png</filename>
+                    </imagetype>
+                </state>
+            </statetype>
+        </button>
+        
+        <button name="prev">
+            <area>255,435,37,64</area>
+            <statetype name="buttonstate">
+                <state name="active">
+                    <imagetype name="background">
+                        <filename>left_arrow.png</filename>
+                    </imagetype>
+                </state>
+                <state name="selected" from="active">
+                    <imagetype name="background">
+                        <filename>left_arrow_selected.png</filename>
+                    </imagetype>
+                </state>
+                <state name="disabled" from="active" />
+                <state name="pushed" from="active">
+                    <imagetype name="background">
+                        <filename>left_arrow_pushed.png</filename>
+                    </imagetype>
+                </state>
+            </statetype>
+        </button>
+        
+        <button name="ripscreen" from="basebutton">
+            <position>1115,665</position>
+        </button>
+        
+        <button name="cancel" from="basebutton">
+            <position>170,665</position>
+        </button>
+        
+        <clock name="date">
+            <area>15,615,140,50</area> 
+	    <font>basesmallblack</font>
+	    <cutdown>no</cutdown>
+	    <format>dddd\nMMMM dd, yyyy</format>
+	    <align>allcenter</align>
+        </clock>
+        
+        <clock name="time">
+            <area>15,670,140,25</area>
+            <font>basesmallblack</font>
+            <align>center</align>
+            <secondflash>yes</secondflash>
+            <format>%TIME%</format>
+        </clock>
+        
+    </window>
+    
+    <window name="title_dialog">
+        
+        <imagetype name="background">
+            <area>0,0,1280,720</area>
+            <filename>background2.png</filename>
+        </imagetype>
+        
+        <textarea name="title" from="basetextarea">
+            <area>170,15,1095,93</area>
+            <font>baselarge</font>
+            <align>allcenter</align>
+            <value>Rip/Transcode</value>
+        </textarea>
+        
+        
+        <textarea name="pagetitle" from="basetextarea">
+            <font>baselargeblack</font>
+            <area>20,15,130,93</area>
+            <align>allcenter</align>
+            <value>Import DVD</value>
+        </textarea>
+        
+        <!-- A bunch of text "labels" -->
+        <textarea name="playtime_text" from="basetextarea">
+            <area>378,180,250,30</area>
+            <value>Length:</value>
+            <align>right</align>
+        </textarea>
+        
+        <textarea name="ripcheck_text" from="playtime_text">
+            <position>378,218</position>
+            <value>Select:</value>
+        </textarea>
+        
+        <textarea name="ripname_text" from="playtime_text">
+            <position>378,258</position>
+            <value>Name:</value>
+        </textarea>
+        
+        <textarea name="ripquality_text" from="playtime_text">
+            <position>378,303</position>
+            <value>Quality:</value>
+        </textarea>
+        
+        <textarea name="ripaudio_text" from="playtime_text">
+            <position>378,348</position>
+            <value>Audio Track:</value>
+        </textarea>
+        
+        <textarea name="ripacthree_text" from="playtime_text">
+            <position>378,390</position>
+            <value>AC3 Audio:</value>
+        </textarea>
+        
+        <textarea name="subtitle_text" from="playtime_text">
+            <position>378,428</position>
+            <value>Subtitles:</value>
+        </textarea>
+        
+        <textarea name="ripview_text" from="playtime_text">
+            <position>378,486</position>
+            <value>View:</value>
+        </textarea>
+        
+        <!-- Widgets that actually do things -->
+        
+        <textarea name="playlength" from="basetextarea">
+            <area>635,180,300,40</area>
+            <value>0:00:00</value>
+        </textarea>
+        
+        <checkbox name="ripcheck" from="basecheckbox">
+            <position>635,208</position>
+        </checkbox>
+        
+        <textedit name="name" from="basetextedit">
+            <position>635,243</position>
+        </textedit>
+        
+        <buttonlist name="quality" from="basewideselector">
+            <position>635,298</position>
+        </buttonlist>
+        
+        <buttonlist name="audio" from="basewideselector">
+            <position>635,343</position>
+        </buttonlist>
+        
+        <checkbox name="ripacthree" from="basecheckbox">
+            <position>635,388</position>
+        </checkbox>
+        
+        <buttonlist name="subtitle" from="basewideselector">
+            <position>635,423</position>
+        </buttonlist>
+        
+        <button name="view">
+            <area>635,485,32,32</area>
+            <statetype name="buttonstate">
+                <state name="active">
+                    <imagetype name="background">
+                        <filename>blankbutton_off.png</filename>
+                    </imagetype>
+                </state>
+                <state name="selected" from="active">
+                    <imagetype name="background">
+                        <filename>blankbutton_on.png</filename>
+                    </imagetype>
+                </state>
+                <state name="disabled" from="active" />
+                <state name="pushed" from="active">
+                    <imagetype name="background">
+                        <filename>blankbutton_pushed.png</filename>
+                    </imagetype>
+                </state>
+            </statetype>
+        </button>
+        
+        <textarea name="numb_titles" from="basetextarea">
+            <area>170,528,1095,30</area>
+            <value>Title 1 of 1</value>
+            <align>allcenter</align>
+        </textarea>
+        
+        <button name="prev_title" from="basebutton">
+            <position>320,575</position>
+            <font>basemediumblack</font>
+            <value>Previous Title</value>
+            <multiline>yes</multiline>
+        </button>
+        
+        <button name="next_title" from="basebutton">
+            <position>965,575</position>
+            <font>basemediumblack</font>
+            <value>Next Title</value>
+            <multiline>yes</multiline>
+        </button>
+        
+        <button name="ripaway" from="basebutton">
+            <position>1115,665</position>
+        </button>
+        
+        <clock name="date">
+            <area>15,615,140,50</area> 
+	    <font>basesmallblack</font>
+	    <cutdown>no</cutdown>
+	    <format>dddd\nMMMM dd, yyyy</format>
+	    <align>allcenter</align>
+        </clock>
+        
+        <clock name="time">
+            <area>15,670,140,25</area>
+            <font>basesmallblack</font>
+            <align>center</align>
+            <secondflash>yes</secondflash>
+            <format>%TIME%</format>
+        </clock>
+        
+    </window>
+    
+</mythuitheme>

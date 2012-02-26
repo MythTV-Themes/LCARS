@@ -1,0 +1,143 @@
+<mythuitheme>
+    
+    <window name="channeloverview">
+        
+        <imagetype name="background">
+            <area>0,0,1280,720</area>
+            <filename>background.png</filename>
+        </imagetype>
+        
+        <textarea name="pagetitle">
+            <font>baselargeblack</font>
+            <area>20,15,130,93</area>
+            <align>allcenter</align>
+	    <multiline>yes</multiline>
+            <value>Channel Editor</value>
+        </textarea>
+        
+        <buttonlist name="channels" from="basebuttonlist2">
+            <area>190,300,1095,405</area>
+            <statetype name="buttonitem">
+                <state name="active">
+                    <imagetype name="icon">
+                        <area>1125,0,60,25</area>
+                        <preserveaspect>true</preserveaspect>
+                    </imagetype>
+                    <textarea name="channum" from="buttontext">
+                        <area>32,1,80,24</area>
+                        <align>center</align>
+                    </textarea>
+                    <textarea name="name" from="buttontext">
+                        <area>120,1,740,24</area>
+                    </textarea>
+                    <textarea name="sourcename" from="name">
+                        <area>860,1,275,24</area>
+                    </textarea>
+                </state>
+                <state name="selectedactive" from="active">
+            	    <shape name="buttonbackground">
+            	        <fill color="#ff9900" />
+            	    </shape>                   
+                </state>
+                <state name="selectedinactive" from="active" />
+            </statetype>
+        </buttonlist>
+        
+        <textarea name="sortlabel" from="basetextarea">
+            <area>170,20,220,30</area>
+            <value>Sort Mode:</value>
+            <font>basemedium</font>
+        </textarea>
+        
+        <buttonlist name="sorting" from="basewideselector">
+            <position>400,15</position>
+        </buttonlist>
+        
+        <textarea name="sourcelabel" from="sortlabel">
+            <position>170,80</position>
+            <value>Video Source:</value>
+        </textarea>
+        
+        <buttonlist name="source" from="basewideselector">
+            <position>400,75</position>
+        </buttonlist>
+        
+        <button name="delete" from="basebutton">
+            <position>900,75</position>
+            <value>Delete</value>
+        </button>
+        
+        <textarea name="nochannumlabel" from="basetextarea">
+            <area>210,137,500,60</area>
+            <value>Hide Channels without channel number.</value>
+        </textarea>
+        
+        <checkbox name="nochannum" from="basecheckbox">
+            <position>170,135</position>
+        </checkbox>
+        
+        <button name="scan" from="basewidebutton">
+            <position>170,180</position>
+            <value>Channel Scan</value>
+        </button>
+        
+        <button name="importicons" from="basewidebutton">
+            <position>568,180</position>
+            <value>Icon Download</value>
+        </button>
+        
+        <button name="edittransport" from="basewidebutton">
+            <position>965,180</position>
+            <value>Edit Transports</value>
+        </button>
+        
+    </window>
+    
+    <window name="osdmenueditor">
+        
+        <imagetype name="background">
+            <area>0,0,1280,720</area>
+            <filename>background2.png</filename>
+        </imagetype>
+        
+        <textarea name="title" from="basetextarea">
+            <font>baselargeblack</font>
+            <area>20,15,130,93</area>
+            <align>allcenter</align>
+	    <multiline>yes</multiline>
+	    <value>OSD Menu Editor</value>
+        </textarea>
+        
+        <clock name="date">
+            <area>15,615,140,50</area> 
+	    <font>basesmallblack</font>
+	    <cutdown>no</cutdown>
+	    <format>dddd\nMMMM dd, yyyy</format>
+	    <align>allcenter</align>
+        </clock>
+        
+        <clock name="time">
+            <area>15,670,140,25</area>
+            <font>basesmallblack</font>
+            <align>center</align>
+            <secondflash>yes</secondflash>
+            <format>%TIME%</format>
+        </clock>
+        
+        <buttonlist name="states" from="basebuttonlist">
+            <area>170,180,425,480</area>
+	    <spacing>5</spacing>
+            <showarrow>no</showarrow>
+        </buttonlist>
+        
+        <buttonlist name="categories" from="basebuttonlist">
+            <area>600,180,665,480</area>
+	    <spacing>5</spacing>
+        </buttonlist>
+        
+        <button name="done" from="basebutton">
+            <position>1115,665</position>
+            <value>Done</value>
+        </button>
+    </window>
+</mythuitheme>

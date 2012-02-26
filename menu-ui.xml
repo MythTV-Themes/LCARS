@@ -1,0 +1,127 @@
+<mythuitheme>
+    
+    <window name="mainmenu">
+        
+        <imagetype name="background">
+            <filename>background2.png</filename>
+            <position>0,0</position>
+        </imagetype>
+        
+        <statetype name="titles">
+            <state name="TV">
+                <textarea name="heading" from="baseheading">
+                    <value>Television</value>
+                </textarea>
+            </state>
+            <state name="MAIN">
+                <textarea name="heading" from="baseheading">
+                    <value>Main Menu</value>
+                </textarea>
+            </state>
+            <state name="MUSIC">
+                <textarea name="heading" from="baseheading">
+                    <value>Music</value>
+                </textarea>
+            </state>
+            <state name="GALLERY">
+                <textarea name="heading" from="baseheading">
+                    <value>Gallery</value>
+                </textarea>
+            </state>
+            <state name="VIDEO">
+                <textarea name="heading" from="baseheading">
+                    <value>Videos</value>
+                </textarea>
+            </state>
+            <state name="GAMES">
+                <textarea name="heading" from="baseheading">
+                    <value>Games</value>
+                </textarea>
+            </state>
+            <state name="WEATHER">
+                <textarea name="heading" from="baseheading">
+                    <value>Weather</value>
+                </textarea>
+            </state>
+            <state name="SCHEDULE">
+                <textarea name="heading" from="baseheading">
+                    <value>Schedule</value>
+                </textarea>
+            </state>
+            <state name="SEARCH">
+                <textarea name="heading" from="baseheading">
+                    <value>Program Searches</value>
+                </textarea>
+            </state>
+            <state name="WORDS" from="SEARCH" />
+            <state name="LISTS" from="SEARCH" />
+            <state name="SETUP">
+                <textarea name="heading" from="baseheading">
+                    <value>Setup</value>
+                </textarea>
+            </state>
+            <state name="TVSETUP" from="TV" />
+            <state name="SETUP_TVRECPRIORITIES">
+                
+            </state>
+            <state name="MEDIA_SETUP">
+                
+            </state>
+            <state name="INFO_SETUP">
+                
+            </state>
+            <state name="DVD">
+                <textarea name="heading" from="baseheading">
+                    <value>Optical Disks</value>
+                </textarea>
+            </state>
+            <state name="DVD_SETTINGS" from="DVD" />
+            <state name="MUSIC_SETTINGS">
+                <textarea name="heading" from="baseheading">
+                    <value>Music Settings</value>
+                </textarea>
+            </state>
+            <state name="VIDEO_SETTINGS" from="VIDEO" />
+            <state name="GAME_SETTINGS" from="GAMES" />
+            <state name="MANAGE_RECORDINGS" from="SCHEDULE" />
+            <state name="LIBRARY">
+                <textarea name="heading" from="baseheading">
+                    <value>Media Library</value>
+                </textarea>
+            </state>
+            <state name="INFO">
+                <textarea name="heading" from="baseheading">
+                    <value>Information Center</value>
+                </textarea>
+            </state>
+            <state name="OPTICAL_DISK" from="DVD" />
+            <state name="UTIL" from="SETUP" />
+            <state name="NETFLIX" from="DVD" />
+        </statetype>
+        
+        <buttonlist name="menu" from="basebuttonlist3">
+            <area>163,183,1108,527</area>
+            <spacing>7</spacing>
+            <wrapstyle>selection</wrapstyle>
+            <showarrow>no</showarrow>
+        </buttonlist>
+        
+        <clock name="date">
+            <area>15,615,140,50</area> 
+	    <font>basesmallblack</font>
+	    <cutdown>no</cutdown>
+	    <format>dddd\nMMMM dd, yyyy</format>
+	    <align>allcenter</align>
+        </clock>
+        
+        <clock name="time">
+            <area>15,670,140,25</area>
+            <font>basesmallblack</font>
+            <align>center</align>
+            <secondflash>yes</secondflash>
+            <format>%TIME%</format>
+        </clock>
+        
+    </window>
+</mythuitheme>
+

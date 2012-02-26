@@ -1,0 +1,564 @@
+<!--
+
+Common MythArchive window definitions
+
+-->
+<mythuitheme>
+    
+    <window name="selectdestination">
+        
+        <imagetype name="background">
+            <filename>background2.png</filename>
+            <area>0,0,1280,720</area>
+        </imagetype>
+        
+        
+        <!--
+            destination selector
+        -->
+        <textarea name="title1" from="basetextarea">
+            <area>20,15,130,100</area>
+            <font>baselargeblack</font>
+            <align>hcenter</align>
+            <multiline>yes</multiline>
+            <value>Select Destination</value>
+        </textarea>
+        
+        <textarea name="title2" from="basetextarea">
+            <area>170,185,500,50</area>
+            <font>basemedium</font>
+            <value>Select Destination</value>
+        </textarea>
+        
+        <buttonlist name="destination_selector" from="basewideselector">
+            <position>170,225</position>
+        </buttonlist>
+        
+        <textarea name="destination_text" from="basetextarea">
+            <area>170,275,1190,90</area>
+            <font>basesmall</font>
+            <value>description goes here.</value>
+            <multiline>yes</multiline>
+        </textarea>
+        
+        <textedit name="filename_edit" from="basewidetextedit">
+            <position>170,335</position>
+        </textedit>
+        
+        <button name="find_button" from="basebutton">
+            <position>970,340</position>
+	    <value>Find</value>
+        </button>
+        
+        <textarea name="freespace_label" from="basetextarea">
+            <area>170,395,150,50</area>
+            <font>basemedium</font>
+            <value>Free Space:</value>
+        </textarea>
+        <textarea name="freespace_text" from="basetextarea">
+            <area>345,395,200,50</area>
+            <font>basemedium</font>
+            <value>0.00Gb</value>
+        </textarea>
+        
+        
+        <textarea name="title" from="basetextarea">
+            <area>205,505,500,50</area>
+            <font>basemedium</font>
+            <value>Make ISO Image</value>
+        </textarea>
+        
+        <checkbox name="makeisoimage_check" from="basecheckbox">
+            <position>170,505</position>
+        </checkbox>
+        
+        <textarea name="burntodvdr_text" from="basetextarea">
+            <area>205,550,500,50</area>
+            <font>description</font>
+            <value>Burn to DVD</value>
+        </textarea>
+        
+        <checkbox name="burntodvdr_check" from="basecheckbox">
+            <position>170,550</position>
+        </checkbox>
+        
+        <textarea name="erasedvdrw_text" from="basetextarea">
+            <area>205,595,500,50</area>
+            <font>description</font>
+            <value>Force Overwrite of DVD-RW Media</value>
+        </textarea>
+        
+        <checkbox name="erasedvdrw_check" from="basecheckbox">
+            <position>170,595</position>
+        </checkbox>
+        
+        <button name="cancel_button" from="basebutton">
+            <position>170,665</position>
+	    <value>Cancel</value>
+        </button>
+        
+        <button name="prev_button" from="basebutton">
+            <position>643,665</position>
+	    <value>Prev</value>
+        </button>
+        
+        <button name="next_button" from="basebutton">
+            <position>1115,665</position>
+	    <value>Next</value>
+        </button>
+        
+        <clock name="date">
+            <area>15,615,140,50</area> 
+	    <font>basesmallblack</font>
+	    <cutdown>no</cutdown>
+	    <format>dddd\nMMMM dd, yyyy</format>
+	    <align>allcenter</align>
+        </clock>
+        
+        <clock name="time">
+            <area>15,670,140,25</area>
+            <font>basesmallblack</font>
+            <align>center</align>
+            <secondflash>yes</secondflash>
+            <format>%TIME%</format>
+        </clock>
+        
+    </window>
+    
+    <!-- 
+      Recording Selector
+  -->
+    <window name="recording_selector">
+        
+        <imagetype name="background">
+            <filename>background.png</filename>
+            <area>0,0,1280,720</area>
+        </imagetype>
+        
+        <textarea name="title" from="basetextarea">
+            <area>20,15,130,100</area>
+            <font>baselargeblack</font>
+            <multiline>yes</multiline>
+            <align>hcenter</align>
+            <value>Select Recordings</value>
+        </textarea>
+        
+        <textarea name="title2" from="basetextarea">
+            <area>170,295,1095,50</area>
+            <font>baselarge</font>
+            <align>center</align>
+            <value>Show Recordings</value>
+        </textarea>
+        
+        <buttonlist name="category_selector" from="basewideselector">
+            <area>475,345,500,40</area>
+        </buttonlist>
+        
+        <buttonlist name="recordinglist" from="basebuttonlist">
+            <area>170,395,1095,260</area>
+            <statetype name="buttonitem">
+                <state name="active">
+                    <textarea name="buttontext">
+                        <area>5,0,1040,30</area>
+                    </textarea>
+                    <statetype name="buttoncheck">
+                        <position>1050,5</position>
+                    </statetype>
+                </state>
+                <state name="selectedactive" from="active">
+                    <shape name="buttonbackground">
+                        <fill color="#ff9900" />
+                    </shape>
+                    <statetype name="buttoncheck">
+                        <position>1050,5</position>
+                    </statetype>
+                </state>
+                <state name="selectedinactive" from="active">
+                    <shape name="buttonbackground">
+                        <fill color="#cc99cc" />
+                    </shape>
+                    <statetype name="buttoncheck">
+                        <position>1050,5</position>
+                    </statetype>
+                </state>
+            </statetype>
+        </buttonlist>
+        
+        <textarea name="progtitle" from="basetextarea">
+            <area>170,15,630,30</area>
+            <font>basesmallyellow</font>
+            <value></value>
+            <multiline>no</multiline>
+        </textarea>
+        
+        <textarea name="progdatetime" from="basetextarea">
+            <area>810,15,160,30</area>
+            <font>basesmallyellow</font>
+            <align>right</align>
+            <value></value>
+            <multiline>no</multiline>
+        </textarea>
+        
+        <textarea name="progdescription" from="basetextarea">
+            <area>170,45,800,130</area>
+            <value></value>
+            <multiline>yes</multiline>
+        </textarea>
+        
+        <imagetype name="cutlist_image">
+            <area>170,180,25,25</area>
+            <filename>ma_cutlist.png</filename>
+        </imagetype>
+        
+        <textarea name="filesize" from="basetextarea">
+            <area>1110,185,100,40</area>
+            <align>right</align>
+            <value></value>
+        </textarea>
+        
+        <imagetype name="preview_image">
+            <area>900,25,200,170</area>
+            <filename>blank.png</filename>
+        </imagetype>
+        
+        <button name="cancel_button" from="basebutton">
+            <position>170,665</position>
+            <value>Cancel</value>
+        </button>
+        
+        <button name="ok_button" from="basebutton">
+            <position>1115,665</position>
+            <value>Ok</value>
+        </button>
+        
+        <clock name="date">
+            <area>15,615,140,50</area> 
+	    <font>basesmallblack</font>
+	    <cutdown>no</cutdown>
+	    <format>dddd\nMMMM dd, yyyy</format>
+	    <align>allcenter</align>
+        </clock>
+        
+        <clock name="time">
+            <area>15,670,140,25</area>
+            <font>basesmallblack</font>
+            <align>center</align>
+            <secondflash>yes</secondflash>
+            <format>%TIME%</format>
+        </clock>
+        
+    </window>
+    
+    <!--
+      File Selector
+  -->
+    
+    <window name="file_selector">
+        
+        <imagetype name="background">
+            <filename>background2.png</filename>
+            <area>0,0,1280,720</area>
+        </imagetype>
+        
+        <textarea name="title_text" from="basetextarea">
+            <area>20,15,130,100</area>
+            <font>baselargeblack</font>
+            <align>hcenter</align>
+            <multiline>yes</multiline>
+            <value>File Finder</value>
+        </textarea>
+        
+        <textedit name="location_edit" from="basewidetextedit">
+            <position>170,185</position>
+        </textedit>
+        
+        <button name="back_button" from="basebutton">
+            <position>955,190</position>
+	    <value>Back</value>
+	</button>
+        
+        <button name="home_button" from="basebutton">
+            <position>1115,190</position>
+	    <value>Home</value>
+        </button>
+        
+        <buttonlist name="filelist" from="basebuttonlist">
+            <area>170,250,1095,410</area>
+            <spacing>4</spacing>
+            <statetype name="buttonitem">
+                <state name="active">
+                    <imagetype name="buttonimage">
+                        <area>2,2,28,28</area>
+                    </imagetype>
+                    <textarea name="buttontext">
+                        <area>35,0,1020,35</area>
+                    </textarea>
+                    <textarea name="size" from="buttontext">
+                        <area>1025,0,125,35</area>
+                        <align>right,vcenter</align>
+                    </textarea>
+                    <statetype name="buttoncheck">
+                        <position>1070,5</position>
+                    </statetype>
+                </state>
+                <state name="selectedactive" from="active">
+                    <shape name="buttonbackground">
+                        <fill color="#ff9900" />
+                    </shape>
+                    <statetype name="buttoncheck">
+                        <position>1070,5</position>
+                    </statetype>
+                </state>
+                <state name="selectedinactive" from="active">
+                    <shape name="buttonbackground">
+                        <fill color="#cc99cc" />
+                    </shape>
+                    <statetype name="buttoncheck">
+                        <position>1070,5</position>
+                    </statetype>
+                </state>
+            </statetype>
+        </buttonlist>
+        
+        <button name="cancel_button" from="basebutton">
+            <position>170,665</position>
+	    <value>Cancel</value>
+        </button>
+        
+        <button name="ok_button" from="basebutton">
+            <position>1115,665</position>
+	    <value>OK</value>
+        </button>
+        
+        <clock name="date">
+            <area>15,615,140,50</area> 
+	    <font>basesmallblack</font>
+	    <cutdown>no</cutdown>
+	    <format>dddd\nMMMM dd, yyyy</format>
+	    <align>allcenter</align>
+        </clock>
+        
+        <clock name="time">
+            <area>15,670,140,25</area>
+            <font>basesmallblack</font>
+            <align>center</align>
+            <secondflash>yes</secondflash>
+            <format>%TIME%</format>
+        </clock>
+        
+    </window>
+    
+    <!--
+      Video Selector
+  -->
+    <window name="video_selector">
+        
+        <imagetype name="background">
+            <filename>background.png</filename>
+            <area>0,0,1280,720</area>
+        </imagetype>
+        
+        <textarea name="title1" from="basetextarea">
+            <area>15,20,130,100</area>
+            <font>baselargeblack</font>
+            <align>hcenter</align>
+            <multiline>yes</multiline>
+            <value>Select Videos</value>
+        </textarea>
+        
+        <textarea name="title2" from="basetextarea">
+            <area>170,295,1095,50</area>
+            <font>baselarge</font>
+            <align>allcenter</align>
+            <value>Video Category</value>
+        </textarea>
+        
+        <buttonlist name="category_selector" from="basewideselector">
+            <area>475,345,500,40</area>
+        </buttonlist>
+        
+        <buttonlist name="videolist" from="basebuttonlist">
+            <area>170,395,1095,260</area>
+            <statetype name="buttonitem">
+                <state name="active">
+                    <textarea name="buttontext">
+                        <area>5,0,1040,30</area>
+                    </textarea>
+                    <statetype name="buttoncheck">
+                        <position>1050,5</position>
+                    </statetype>
+                </state>
+                <state name="selectedactive" from="active">
+                    <shape name="buttonbackground">
+                        <fill color="#ff9900" />
+                    </shape>
+                    <statetype name="buttoncheck">
+                        <position>1050,5</position>
+                    </statetype>
+                </state>
+                <state name="selectedinactive" from="active">
+                    <shape name="buttonbackground">
+                        <fill color="#cc99cc" />
+                    </shape>
+                    <statetype name="buttoncheck">
+                        <position>1050,5</position>
+                    </statetype>
+                </state>
+            </statetype>
+        </buttonlist>
+        
+        <textarea name="videotitle">
+            <area>170,15,800,30</area>
+            <font>basemedium</font>
+            <value>title goes here</value>
+            <multiline>no</multiline>
+        </textarea>
+        
+        <textarea name="videoplot" from="basetextarea">
+            <area>170,45,800,130</area>
+            <value>description goes here.</value>
+            <multiline>yes</multiline>
+        </textarea>
+        
+        <textarea name="filesize" from="basetextarea">
+            <area>780,185,100,40</area>
+            <align>right</align>
+            <value>x.xx Gb</value>
+        </textarea>
+        
+        <imagetype name="cover_image">
+            <area>1025,15,140,200</area>
+        </imagetype>
+        
+        <textarea name="label" from="basetextarea">
+            <area>885,185,60,40</area>
+            <font>basesmallyellow</font>
+            <align>right</align>
+            <value>PL:</value>
+        </textarea>
+        
+        <textarea name="parentallevel_text" from="basetextarea">
+            <area>950,185,20,40</area>
+            <value>1</value>
+        </textarea>
+        
+        <textarea name="warning_text" from="basetextarea">
+            <area>170,45,800,130</area>
+            <align>allcenter</align>
+            <value>No videos available</value>
+        </textarea>
+        
+        <button name="cancel_button" from="basebutton">
+            <position>170,665</position >
+            <value>Cancel</value>
+        </button>
+        
+        <button name="ok_button" from="basebutton">
+            <position>1115,665</position>
+            <value>Ok</value>
+        </button>
+        
+        <clock name="date">
+            <area>15,615,140,50</area> 
+	    <font>basesmallblack</font>
+	    <cutdown>no</cutdown>
+	    <format>dddd\nMMMM dd, yyyy</format>
+	    <align>allcenter</align>
+        </clock>
+        
+        <clock name="time">
+            <area>15,670,140,25</area>
+            <font>basesmallblack</font>
+            <align>center</align>
+            <secondflash>yes</secondflash>
+            <format>%TIME%</format>
+        </clock>
+        
+    </window>
+    
+    <window name="logviewer">
+        
+        <imagetype name="background">
+            <filename>background2.png</filename>
+            <area>0,0,1280,720</area>
+        </imagetype>
+        
+        <textarea name="title1" from="basetextarea">
+            <area>20,15,130,100</area>
+            <font>baselargeblack</font>
+            <align>hcenter</align>
+            <multiline>yes</multiline>
+            <value>Log Viewer</value>
+        </textarea>
+        
+        <buttonlist name="loglist" from="basebuttonlist">
+            <area>170,180,1095,480</area>
+            <statetype name="buttonitem">
+                <state name="active">
+                    <textarea name="buttontext">
+                        <area>5,0,1075,30</area>
+                    </textarea>
+                    <statetype name="buttoncheck">
+                        <position>1050,5</position>
+                    </statetype>
+                </state>
+                <state name="selectedactive" from="active">
+                    <shape name="buttonbackground">
+                        <fill color="#ff9900" />
+                    </shape>
+                    <statetype name="buttoncheck">
+                        <position>1100,5</position>
+                    </statetype>
+                </state>
+                <state name="selectedinactive" from="active">
+                    <shape name="buttonbackground">
+                        <fill color="#cc99cc" />
+                    </shape>
+                    <statetype name="buttoncheck">
+                        <position>1100,5</position>
+                    </statetype>
+                </state>
+            </statetype>
+        </buttonlist>
+        
+        <textarea name="logitem_text" from="basetextarea">
+            <area>170,15,1095,100</area>
+            <align>allcenter</align>
+            <value></value>
+            <multiline>yes</multiline>
+        </textarea>
+        
+        <button name="cancel_button" from="basebutton">
+            <position>170,665</position>
+	    <value>Cancel</value>
+        </button>
+        
+        <button name="update_button" from="basebutton">
+            <position>643,665</position>
+ 	    <value>Update</value>
+       </button>
+        
+        <button name="exit_button" from="basebutton">
+            <position>1115,665</position>
+	    <value>Exit</value>
+        </button>
+        
+        <clock name="date">
+            <area>15,615,140,50</area> 
+	    <font>basesmallblack</font>
+	    <cutdown>no</cutdown>
+	    <format>dddd\nMMMM dd, yyyy</format>
+	    <align>allcenter</align>
+        </clock>
+        
+        <clock name="time">
+            <area>15,670,140,25</area>
+            <font>basesmallblack</font>
+            <align>center</align>
+            <secondflash>yes</secondflash>
+            <format>%TIME%</format>
+        </clock>
+        
+    </window>
+    
+</mythuitheme>

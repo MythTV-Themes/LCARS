@@ -1,0 +1,996 @@
+<mythuitheme>
+    
+    <window name="watchrecordings">
+        
+        <imagetype name="background">
+            <filename>background.png</filename>
+            <position>0,0</position>
+        </imagetype>
+        
+        <imagetype name="fanart">
+            <area>162,15,748,207</area>
+            <alpha>125</alpha>
+            <mask>recordmask.png</mask>
+        </imagetype>
+        
+        <imagetype name="banner">
+            <area>20,532,130,43</area>
+            <alpha>255</alpha>
+            <preserveaspect>yes</preserveaspect>
+            <mask>recordmask.png</mask>
+        </imagetype>
+        
+        <imagetype name="coverart">
+            <area>20,350,130,170</area>
+            <alpha>255</alpha>
+            <preserveaspect>yes</preserveaspect>
+            <mask>recordmask.png</mask>
+        </imagetype>
+        
+        <progressbar name="usedbar">
+            <area>20,155,130,9</area>
+            <layout>horizontal</layout>
+            <style>reveal</style>
+            <imagetype name="background">
+                <area>0,0,100%,100%</area>
+                <filename>progressbar_small_background.png</filename>
+                <preserveaspect>true</preserveaspect>
+            </imagetype>
+            <imagetype name="progressimage">
+                <area>0,0,100%,100%</area>
+                <filename>progressbar_small_fill_reverse.png</filename>
+                <preserveaspect>true</preserveaspect>
+            </imagetype>
+        </progressbar>
+        
+        <textarea name="freereport" from="basetextarea">
+            <area>15,130,140,25</area>
+            <font>baseinfoblack</font>
+            <align>center</align>
+        </textarea>
+        
+        <textarea name="pagetitle" from="basetextarea">
+            <area>15,15,140,103</area>
+            <font>baselargeblack</font>
+            <value>Watch Recordings</value>
+            <align>center</align>
+            <multiline>yes</multiline>
+        </textarea>
+        
+        <buttonlist name="groups" from="basebuttonlist">
+            <area>163,295,300,415</area>
+	    <spacing>5</spacing>
+            <buttonarea>0,0,250,390</buttonarea>
+            <statetype name="buttonitem">
+                <state name="active">
+                    <area>0,0,100%,30</area>
+                    <shape name="buttonbackground">
+                        <area>25,0,100%,30</area>
+                        <cornerradius>15</cornerradius>
+                    </shape>
+                    <textarea name="buttontext">
+                        <area>5,0,300,30</area>
+                        <font>basesmallblack</font>
+                        <cutdown>yes</cutdown>
+                        <align>center</align>
+                    </textarea>
+                </state>
+                <state name="selectedactive" from="active">
+                    <shape name="buttonbackground">
+                        <fill color="#ff9900" alpha="255" />
+                    </shape>
+                </state>
+                <state name="selectedinactive" from="active">
+                    <shape name="buttonbackground">
+                        <fill color="#cc99cc" alpha="255" />
+                    </shape>
+                </state>
+            </statetype>
+        </buttonlist>
+        
+        <buttonlist name="recordings" from="basebuttonlist2">
+            <area>490,295,775,410</area>
+	    <spacing>5</spacing>
+            <buttonarea>0,0,775,390</buttonarea>
+            <wrapstyle>captive</wrapstyle>
+            <statetype name="buttonitem">
+                <state name="active">
+                    <shape name="buttonbackground">
+                        <area>25,0,750,30</area>
+                    </shape>
+                    <textarea name="titlesubtitle" from="buttontext">
+                        <area>32,1,500,28</area>
+                    </textarea>
+                    <textarea name="shortdate" from="titlesubtitle">
+                        <area>540,1,120,28</area>
+                        <align>right</align>
+                    </textarea>
+                    <textarea name="starttime" from="shortdate">
+                        <area>670,1,100,28</area>
+                        <align>right</align>
+                    </textarea>
+                    <statetype name="watched">
+                        <state name="yes">
+                            <imagetype name="yes">
+                                <position>0,0</position>
+                                <filename>type/small_watched.png</filename>
+                            </imagetype>
+                        </state>
+                        <state name="no" />
+                    </statetype>
+                    <statetype name="playlist">
+                        <state name="yes">
+                            <imagetype name="playlistyes">
+                                <position>5,2</position>
+                                <filename>type/playlist_yes.png</filename>
+                            </imagetype>
+                        </state>
+                        <state name="no" />
+                    </statetype>
+                </state>
+                <state name="selectedinactive" from="active">
+                    <shape name="buttonbackground">
+                        <fill color="#cc99cc" alpha="255" />
+                    </shape>
+                </state>
+                <state name="selectedactive" from="active">
+                    <shape name="buttonbackground">
+                        <fill color="#ff9900" alpha="255" />
+                    </shape>
+                </state>
+            </statetype>
+        </buttonlist>
+        
+        <imagetype name="autoexpire">
+            <area>850,260,25,30</area>
+            <filename>type/autoexpire.png</filename>
+            <preserveaspect>true</preserveaspect>
+        </imagetype>
+        
+        <imagetype name="commflagged">
+            <area>890,260,25,30</area>
+            <filename>type/commflagged.png</filename>
+            <preserveaspect>true</preserveaspect>
+        </imagetype>
+        
+        <imagetype name="bookmark">
+            <area>930,260,25,30</area>
+            <preserveaspect>true</preserveaspect>
+            <filename>type/bookmark.png</filename>
+        </imagetype>
+        
+        <imagetype name="cutlist">
+            <area>970,260,25,30</area>
+            <preserveaspect>true</preserveaspect>
+            <filename>type/cutlist.png</filename>
+        </imagetype>
+        
+        <statetype name="audioprops">
+            <position>1010,260</position>
+            <showempty>yes</showempty>
+            <state name="stereo">
+                <imagetype name="stereo">
+                    <filename>type/stereo.png</filename>
+                    <area>0,0,25,30</area>
+                    <preserveaspect>true</preserveaspect>
+                </imagetype>
+            </state>
+            <state name="surround">
+                <imagetype name="surround">
+                    <filename>type/surround.png</filename>
+                    <area>0,0,25,30</area>
+                    <preserveaspect>true</preserveaspect>
+                </imagetype>
+            </state>
+            <state name="dolby">
+                <imagetype name="dolby">
+                    <filename>type/dd.png</filename>
+                    <area>0,0,25,30</area>
+                    <preserveaspect>true</preserveaspect>
+                </imagetype>
+            </state>
+            <state name="mono">
+                <imagetype name="mono">
+                    <filename>type/mono.png</filename>
+                    <area>0,0,25,30</area>
+                    <preserveaspect>true</preserveaspect>
+                </imagetype>
+            </state>
+        </statetype>
+        
+        <statetype name="subtitletypes">
+            <position>1050,260</position>
+            <showempty>yes</showempty>
+            <state name="cc">
+                <imagetype name="cc">
+                    <filename>type/cc.png</filename>
+                    <area>0,0,25,30</area>
+                    <preserveaspect>true</preserveaspect>
+                </imagetype>
+            </state>
+            <state name="subtitles">
+                <imagetype name="subtitles">
+                    <filename>type/subs.png</filename>
+                    <area>0,0,25,30</area>
+                    <preserveaspect>true</preserveaspect>
+                </imagetype>
+            </state>
+            <state name="onscreensub">
+                <imagetype name="onscreensub">
+                    <filename>type/subs_onscreen.png</filename>
+                    <area>0,0,25,30</area>
+                    <preserveaspect>true</preserveaspect>
+                </imagetype>
+            </state>
+        </statetype>
+        
+        <statetype name="videoprops">
+            <position>1090,260</position>
+            <showempty>yes</showempty>
+            <state name="hd1080">
+                <imagetype name="hd1080">
+                    <filename>type/hd1080.png</filename>
+                    <area>0,0,25,30</area>
+                    <preserveaspect>true</preserveaspect>
+                </imagetype>
+            </state>
+            <state name="hd720">
+                <imagetype name="hd720">
+                    <filename>type/hd720.png</filename>
+                    <area>0,0,25,30</area>
+                    <preserveaspect>true</preserveaspect>
+                </imagetype>
+            </state>
+            <state name="hdtv">
+                <imagetype name="hdtv">
+                    <filename>type/hd.png</filename>
+                    <area>0,0,25,30</area>
+                    <preserveaspect>true</preserveaspect>
+                </imagetype>
+            </state>
+            <state name="widescreen">
+                <imagetype name="widescreen">
+                    <filename>type/wide.png</filename>
+                    <area>0,0,25,30</area>
+                    <preserveaspect>true</preserveaspect>
+                </imagetype>
+            </state>
+        </statetype>
+        
+        <imagetype name="processing">
+            <area>1130,260,25,30</area>
+            <preserveaspect>true</preserveaspect>
+            <filename>type/processing.png</filename>
+        </imagetype>
+        
+        <textarea name="filesize_str" from="basetextarea">
+            <area>1175,262,90,25</area>
+            <cutdown>yes</cutdown>
+            <align>center</align>
+            <font>basesmallblack</font>
+        </textarea>
+        
+        <textarea name="title" from="basetextarea">
+            <area>150,229,395,26</area>
+            <cutdown>yes</cutdown>
+            <align>center</align>
+            <font>basesmallblack</font>
+        </textarea>
+        
+        <textarea name="subtitle" from="basetextarea">
+            <area>150,262,395,25</area>
+            <cutdown>yes</cutdown>
+            <align>center</align>
+            <font>basesmallblack</font>
+        </textarea>
+        
+        <textarea name="channel" from="basetextarea">
+            <area>635,229,208,26</area>
+            <align>center</align>
+            <font>basesmallblack</font>
+        </textarea>
+        
+        <textarea name="stars" from="basetextarea">
+            <area>635,262,208,26</area>
+            <align>center</align>
+            <font>basesmallblack</font>
+        </textarea>
+        
+        <textarea name="timedate" from="channel">
+            <area>850,229,313,26</area>
+            <align>center</align>
+            <font>basesmallblack</font>
+        </textarea>
+        
+        <textarea name="description" from="channel">
+            <area>189,7,700,220</area>
+            <font>basesmall</font>
+            <align>justify,vcenter</align>
+            <multiline>yes</multiline>
+            <cutdown>yes</cutdown>
+        </textarea>
+        
+        <imagetype name="preview">
+            <area>920,10,300,200</area>
+            <preserveaspect>true</preserveaspect>
+        </imagetype>
+        
+        <textarea name="norecordings">
+            <area>189,85,890,220</area>
+            <font>basemedium</font>
+            <value>            </value>
+            <multiline>yes</multiline>
+            <align>allcenter</align>
+        </textarea>
+        
+        <clock name="date">
+            <area>15,615,140,50</area> 
+	    <font>basesmallblack</font>
+	    <cutdown>no</cutdown>
+	    <format>dddd\nMMMM dd, yyyy</format>
+	    <align>allcenter</align>
+        </clock>
+        
+        <clock name="time">
+            <area>15,670,140,25</area>
+            <font>basesmallblack</font>
+            <align>center</align>
+            <secondflash>yes</secondflash>
+            <format>%TIME%</format>
+        </clock>
+        
+    </window>
+    
+    <window name="deleterecordings">
+        
+        <imagetype name="background">
+            <filename>background.png</filename>
+            <position>0,0</position>
+        </imagetype>
+        
+        <imagetype name="fanart">
+            <area>162,15,748,207</area>
+            <alpha>125</alpha>
+            <mask>recordmask.png</mask>
+        </imagetype>
+        
+        <imagetype name="banner">
+            <area>20,532,130,43</area>
+            <alpha>255</alpha>
+            <preserveaspect>yes</preserveaspect>
+            <mask>recordmask.png</mask>
+        </imagetype>
+        
+        <imagetype name="coverart">
+            <area>20,350,130,170</area>
+            <alpha>255</alpha>
+            <preserveaspect>yes</preserveaspect>
+            <mask>recordmask.png</mask>
+        </imagetype>
+        
+        <progressbar name="usedbar">
+            <area>20,155,130,9</area>
+            <layout>horizontal</layout>
+            <style>reveal</style>
+            <imagetype name="background">
+                <area>0,0,100%,100%</area>
+                <filename>progressbar_small_background.png</filename>
+                <preserveaspect>true</preserveaspect>
+            </imagetype>
+            <imagetype name="progressimage">
+                <area>0,0,100%,100%</area>
+                <filename>progressbar_small_fill_reverse.png</filename>
+                <preserveaspect>true</preserveaspect>
+            </imagetype>
+        </progressbar>
+        
+        <textarea name="freereport" from="basetextarea">
+            <area>15,130,140,25</area>
+            <font>baseinfoblack</font>
+            <align>center</align>
+        </textarea>
+        
+        <textarea name="pagetitle" from="basetextarea">
+            <area>15,15,140,103</area>
+            <font>baselargeblack</font>
+            <value>Delete Recordings</value>
+            <align>center</align>
+            <multiline>yes</multiline>
+        </textarea>
+        
+        <buttonlist name="groups" from="basebuttonlist">
+            <area>163,295,300,415</area>
+	    <spacing>5</spacing>
+            <buttonarea>0,0,250,390</buttonarea>
+            <statetype name="buttonitem">
+                <state name="active">
+                    <area>0,0,100%,30</area>
+                    <shape name="buttonbackground">
+                        <area>25,0,100%,30</area>
+                        <cornerradius>15</cornerradius>
+                    </shape>
+                    <textarea name="buttontext">
+                        <area>5,0,300,30</area>
+                        <font>basesmallblack</font>
+                        <cutdown>yes</cutdown>
+                        <align>center</align>
+                    </textarea>
+                </state>
+                <state name="selectedactive" from="active">
+                    <shape name="buttonbackground">
+                        <fill color="#ff9900" alpha="255" />
+                    </shape>
+                </state>
+                <state name="selectedinactive" from="active">
+                    <shape name="buttonbackground">
+                        <fill color="#cc99cc" alpha="255" />
+                    </shape>
+                </state>
+            </statetype>
+        </buttonlist>
+        
+        <buttonlist name="recordings" from="basebuttonlist2">
+            <area>490,295,775,410</area>
+	    <spacing>5</spacing>
+            <buttonarea>0,0,775,390</buttonarea>
+            <wrapstyle>captive</wrapstyle>
+            <statetype name="buttonitem">
+                <state name="active">
+                    <shape name="buttonbackground">
+                        <area>25,0,750,30</area>
+                    </shape>
+                    <textarea name="titlesubtitle" from="buttontext">
+                        <area>32,1,500,28</area>
+                    </textarea>
+                    <textarea name="shortdate" from="titlesubtitle">
+                        <area>540,1,120,28</area>
+                        <align>right</align>
+                    </textarea>
+                    <textarea name="starttime" from="shortdate">
+                        <area>670,1,100,28</area>
+                        <align>right</align>
+                    </textarea>
+                    <statetype name="watched">
+                        <state name="yes">
+                            <imagetype name="yes">
+                                <position>0,0</position>
+                                <filename>type/small_watched.png</filename>
+                            </imagetype>
+                        </state>
+                        <state name="no" />
+                    </statetype>
+                    <statetype name="playlist">
+                        <state name="yes">
+                            <imagetype name="playlistyes">
+                                <position>5,2</position>
+                                <filename>type/playlist_yes.png</filename>
+                            </imagetype>
+                        </state>
+                        <state name="no" />
+                    </statetype>
+                </state>
+                <state name="selectedinactive" from="active">
+                    <shape name="buttonbackground">
+                        <fill color="#cc99cc" alpha="255" />
+                    </shape>
+                </state>
+                <state name="selectedactive" from="active">
+                    <shape name="buttonbackground">
+                        <fill color="#ff9900" alpha="255" />
+                    </shape>
+                </state>
+            </statetype>
+        </buttonlist>
+        
+        <imagetype name="autoexpire">
+            <area>850,260,25,30</area>
+            <filename>type/autoexpire.png</filename>
+            <preserveaspect>true</preserveaspect>
+        </imagetype>
+        
+        <imagetype name="commflagged">
+            <area>890,260,25,30</area>
+            <filename>type/commflagged.png</filename>
+            <preserveaspect>true</preserveaspect>
+        </imagetype>
+        
+        <imagetype name="bookmark">
+            <area>930,260,25,30</area>
+            <preserveaspect>true</preserveaspect>
+            <filename>type/bookmark.png</filename>
+        </imagetype>
+        
+        <imagetype name="cutlist">
+            <area>970,260,25,30</area>
+            <preserveaspect>true</preserveaspect>
+            <filename>type/cutlist.png</filename>
+        </imagetype>
+        
+        <statetype name="audioprops">
+            <position>1010,260</position>
+            <showempty>yes</showempty>
+            <state name="stereo">
+                <imagetype name="stereo">
+                    <filename>type/stereo.png</filename>
+                    <area>0,0,25,30</area>
+                    <preserveaspect>true</preserveaspect>
+                </imagetype>
+            </state>
+            <state name="surround">
+                <imagetype name="surround">
+                    <filename>type/surround.png</filename>
+                    <area>0,0,25,30</area>
+                    <preserveaspect>true</preserveaspect>
+                </imagetype>
+            </state>
+            <state name="dolby">
+                <imagetype name="dolby">
+                    <filename>type/dd.png</filename>
+                    <area>0,0,25,30</area>
+                    <preserveaspect>true</preserveaspect>
+                </imagetype>
+            </state>
+            <state name="mono">
+                <imagetype name="mono">
+                    <filename>type/mono.png</filename>
+                    <area>0,0,25,30</area>
+                    <preserveaspect>true</preserveaspect>
+                </imagetype>
+            </state>
+        </statetype>
+        
+        <statetype name="subtitletypes">
+            <position>1050,260</position>
+            <showempty>yes</showempty>
+            <state name="cc">
+                <imagetype name="cc">
+                    <filename>type/cc.png</filename>
+                    <area>0,0,25,30</area>
+                    <preserveaspect>true</preserveaspect>
+                </imagetype>
+            </state>
+            <state name="subtitles">
+                <imagetype name="subtitles">
+                    <filename>type/subs.png</filename>
+                    <area>0,0,25,30</area>
+                    <preserveaspect>true</preserveaspect>
+                </imagetype>
+            </state>
+            <state name="onscreensub">
+                <imagetype name="onscreensub">
+                    <filename>type/subs_onscreen.png</filename>
+                    <area>0,0,25,30</area>
+                    <preserveaspect>true</preserveaspect>
+                </imagetype>
+            </state>
+        </statetype>
+        
+        <statetype name="videoprops">
+            <position>1090,260</position>
+            <showempty>yes</showempty>
+            <state name="hd1080">
+                <imagetype name="hd1080">
+                    <filename>type/hd1080.png</filename>
+                    <area>0,0,25,30</area>
+                    <preserveaspect>true</preserveaspect>
+                </imagetype>
+            </state>
+            <state name="hd720">
+                <imagetype name="hd720">
+                    <filename>type/hd720.png</filename>
+                    <area>0,0,25,30</area>
+                    <preserveaspect>true</preserveaspect>
+                </imagetype>
+            </state>
+            <state name="hdtv">
+                <imagetype name="hdtv">
+                    <filename>type/hd.png</filename>
+                    <area>0,0,25,30</area>
+                    <preserveaspect>true</preserveaspect>
+                </imagetype>
+            </state>
+            <state name="widescreen">
+                <imagetype name="widescreen">
+                    <filename>type/wide.png</filename>
+                    <area>0,0,25,30</area>
+                    <preserveaspect>true</preserveaspect>
+                </imagetype>
+            </state>
+        </statetype>
+        
+        <imagetype name="processing">
+            <area>1130,260,25,30</area>
+            <preserveaspect>true</preserveaspect>
+            <filename>type/processing.png</filename>
+        </imagetype>
+        
+        <textarea name="filesize_str" from="basetextarea">
+            <area>1175,262,90,25</area>
+            <cutdown>yes</cutdown>
+            <align>center</align>
+            <font>basesmallblack</font>
+        </textarea>
+        
+        <textarea name="title" from="basetextarea">
+            <area>150,229,395,26</area>
+            <cutdown>yes</cutdown>
+            <align>center</align>
+            <font>basesmallblack</font>
+        </textarea>
+        
+        <textarea name="subtitle" from="basetextarea">
+            <area>150,262,395,25</area>
+            <cutdown>yes</cutdown>
+            <align>center</align>
+            <font>basesmallblack</font>
+        </textarea>
+        
+        <textarea name="channel" from="basetextarea">
+            <area>635,229,208,26</area>
+            <align>center</align>
+            <font>basesmallblack</font>
+        </textarea>
+        
+        <textarea name="stars" from="basetextarea">
+            <area>635,262,208,26</area>
+            <align>center</align>
+            <font>basesmallblack</font>
+        </textarea>
+        
+        <textarea name="timedate" from="channel">
+            <area>850,229,313,26</area>
+            <align>center</align>
+            <font>basesmallblack</font>
+        </textarea>
+        
+        <textarea name="description" from="channel">
+            <area>189,7,700,220</area>
+            <font>basesmall</font>
+            <align>justify,vcenter</align>
+            <multiline>yes</multiline>
+            <cutdown>yes</cutdown>
+        </textarea>
+        
+        <imagetype name="preview">
+            <area>920,10,300,200</area>
+            <preserveaspect>true</preserveaspect>
+        </imagetype>
+        
+        <textarea name="norecordings">
+            <area>189,85,890,220</area>
+            <font>basemedium</font>
+            <value>            </value>
+            <multiline>yes</multiline>
+            <align>allcenter</align>
+        </textarea>
+        
+        <clock name="date">
+            <area>15,615,140,50</area> 
+	    <font>basesmallblack</font>
+	    <cutdown>no</cutdown>
+	    <format>dddd\nMMMM dd, yyyy</format>
+	    <align>allcenter</align>
+        </clock>
+        
+        <clock name="time">
+            <area>15,670,140,25</area>
+            <font>basesmallblack</font>
+            <align>center</align>
+            <secondflash>yes</secondflash>
+            <format>%TIME%</format>
+        </clock>
+        
+    </window>
+    
+    <window name="groupselector">
+        <area>-1,-1,1280,720</area>
+        <imagetype name="backimg">
+            <filename>LCARSMenusbg.png</filename>
+        </imagetype>
+        
+        <textarea name="label" from="basetextarea">
+            <area>200,40,1026,180</area>
+            <multiline>yes</multiline>
+            <align>allcenter</align>
+            <font>baseheader</font>
+        </textarea>
+        
+        <buttonlist name="groups" from="basebuttonlist">
+            <area>220,240,1006,396</area>
+            <showarrow>no</showarrow>
+        </buttonlist>
+    </window>
+    
+    <window name="changeview">
+        <area>-1,-1,1280.720</area>
+        <imagetype name="backimg">
+            <filename>LCARSSettingsbg.png</filename>
+        </imagetype>
+        
+        <textarea name="title" from="basetextarea">
+            <area>200,40,1026,50</area>
+            <align>allcenter</align>
+            <font>baselarge</font>
+            <value>Change View</value>
+        </textarea>
+        
+        <checkbox name="titles" from="basecheckbox">
+            <position>220,120</position>
+        </checkbox>
+        
+        <textarea name="titlelabel" from="basetextarea">
+            <area>270,120,300,30</area>
+            <value>Show Titles</value>
+        </textarea>
+        
+        <checkbox name="categories" from="basecheckbox">
+            <position>220,170</position>
+        </checkbox>
+        
+        <textarea name="catlabel" from="titlelabel">
+            <position>270,170</position>
+            <value>Show Categories</value>
+        </textarea>
+        
+        <checkbox name="recgroups" from="basecheckbox">
+            <position>220,220</position>
+        </checkbox>
+        
+        <textarea name="grouplabel" from="titlelabel">
+            <position>270,220</position>
+            <value>Show Recording Groups</value>
+        </textarea>
+        
+        <checkbox name="watchlist" from="basecheckbox">
+            <position>220,270</position>
+        </checkbox>
+        
+        <textarea name="watchlabel" from="titlelabel">
+            <position>270,270</position>
+            <value>Show Watch List</value>
+        </textarea>
+        
+        <checkbox name="searches" from="basecheckbox">
+            <position>220,320</position>
+        </checkbox>
+        
+        <textarea name="searchlabel" from="titlelabel">
+            <position>270,320</position>
+            <value>Show Searches</value>
+        </textarea>
+        
+        <checkbox name="livetv" from="basecheckbox">
+            <position>220,370</position>
+        </checkbox>
+        
+        <textarea name="livelabel" from="titlelabel">
+            <position>270,370</position>
+            <value>Show LiveTV</value>
+        </textarea>
+        
+        <checkbox name="watched" from="basecheckbox">
+            <position>220,420</position>
+        </checkbox>
+        
+        <textarea name="watchedlabel" from="titlelabel">
+            <position>270,420</position>
+            <value>Show Watched Programs</value>
+        </textarea>
+        
+        <button name="save" from="basebutton">
+            <position>1076,596</position>
+            <value>Save</value>
+        </button>
+    </window>
+    
+    <window name="passwordchanger">
+        <area>-1,-1,1280,720</area>
+        
+        <imagetype name="backimg">
+            <filename>LCARSSettingsbg.png</filename>
+        </imagetype>
+        
+        <textarea name="label" from="basetextarea">
+            <area>200,40,1026,50</area>
+            <align>allcenter</align>
+            <font>baselarge</font>
+            <value>Change Recording Group Password</value>
+        </textarea>
+        
+        <textarea name="oldpasslabel" from="basetextarea">
+            <area>220,180,300,30</area>
+            <value>Old Password:</value>
+        </textarea>
+        
+        <textedit name="oldpassword" from="basewidetextedit">
+            <position>220,210</position>
+        </textedit>
+        
+        <textarea name="newpasslabel" from="basetextarea">
+            <area>220,310,300,30</area>
+            <value>New Password:</value>
+        </textarea>
+        
+        <textedit name="newpassword" from="basewidetextedit">
+            <position>220,340</position>
+        </textedit>
+        
+        <button name="ok" from="basebutton">
+            <position>1076,596</position>
+            <value>OK</value>
+        </button>
+    </window>
+    
+    <window name="editmetadata">
+        <area>-1,-1,1280,720</area>
+        
+        <imagetype name="backimg">
+            <filename>LCARSSettingsbg.png</filename>
+        </imagetype>
+        
+        <textarea name="label" from="basetextarea">
+            <area>200,40,1026,50</area>
+            <multiline>yes</multiline>
+            <align>allcenter</align>
+            <value>Edit Recording Metadata</value>
+        </textarea>
+        
+        <textarea name="titlelabel" from="basetextarea">
+            <area>220,180,300,30</area>
+            <value>Title:</value>
+        </textarea>
+        
+        <textedit name="title" from="basewidetextedit">
+            <position>220,210</position>
+        </textedit>
+        
+        <textarea name="subtitlelabel" from="basetextarea">
+            <area>220,310,300,30</area>
+            <value>Subtitle:</value>
+        </textarea>
+        
+        <textedit name="subtitle" from="basewidetextedit">
+            <position>220,340</position>
+        </textedit>
+        
+        <button name="ok" from="basebutton">
+            <position>1076,596</position>
+            <value>OK</value>
+        </button>
+    </window>
+    
+    <window name="iconhelp">
+        <area>-1,-1,1280,720</area>
+        
+        <imagetype name="backimg">
+            <area>0,0,100%,100%</area>
+            <filename>LCARSSettingsbg.png</filename>
+        </imagetype>
+        
+        <textarea name="title" from="basetextarea">
+            <area>200,40,1026,50</area>
+            <value>Status Icons</value>
+            <font>baselarge</font>
+            <align>allcenter</align>
+        </textarea>
+        
+        <buttonlist name="iconlist" from="basebuttonlist">
+            <area>220,120,1002,564</area>
+            <wrapstyle>selection</wrapstyle>
+            <spacing>5</spacing>
+            <buttonarea>0,0,1002,564</buttonarea>
+            <statetype name="buttonitem">
+                <area>0,0,1002,25</area>
+                <state name="active">
+                    <statetype name="icons">
+                        <position>15,0</position>
+                        <state name="commflagged">
+                            <imagetype name="statusimage">
+                                <filename>type/commflagged.png</filename>
+                            </imagetype>
+                        </state>
+                        <state name="cutlist">
+                            <imagetype name="statusimage">
+                                <filename>type/cutlist.png</filename>
+                            </imagetype>
+                        </state>
+                        <state name="autoexpire">
+                            <imagetype name="statusimage">
+                                <filename>type/autoexpire.png</filename>
+                            </imagetype>
+                        </state>
+                        <state name="processing">
+                            <imagetype name="statusimage">
+                                <filename>type/processing.png</filename>
+                            </imagetype>
+                        </state>
+                        <state name="bookmark">
+                            <imagetype name="statusimage">
+                                <filename>type/bookmark.png</filename>
+                            </imagetype>
+                        </state>
+                        <state name="mono">
+                            <imagetype name="statusimage">
+                                <filename>type/mono.png</filename>
+                            </imagetype>
+                        </state>
+                        <state name="stereo">
+                            <imagetype name="statusimage">
+                                <filename>type/stereo.png</filename>
+                            </imagetype>
+                        </state>
+                        <state name="surround">
+                            <imagetype name="statusimage">
+                                <filename>type/surround.png</filename>
+                            </imagetype>
+                        </state>
+                        <state name="dolby">
+                            <imagetype name="statusimage">
+                                <filename>type/dd.png</filename>
+                            </imagetype>
+                        </state>
+                        <state name="cc">
+                            <imagetype name="statusimage">
+                                <filename>type/cc.png</filename>
+                            </imagetype>
+                        </state>
+                        <state name="subtitles">
+                            <imagetype name="statusimage">
+                                <filename>type/subs.png</filename>
+                            </imagetype>
+                        </state>
+                        <state name="onscreensub">
+                            <imagetype name="statusimage">
+                                <filename>type/subs_onscreen.png</filename>
+                            </imagetype>
+                        </state>
+                        <state name="hdtv">
+                            <imagetype name="statusimage">
+                                <filename>type/hd.png</filename>
+                            </imagetype>
+                        </state>
+                        <state name="hd720">
+                            <imagetype name="statusimage">
+                                <filename>type/hd720.png</filename>
+                            </imagetype>
+                        </state>
+                        <state name="hd1080">
+                            <imagetype name="statusimage">
+                                <filename>type/hd1080.png</filename>
+                            </imagetype>
+                        </state>
+                        <state name="avchd">
+                            <imagetype name="statusimage">
+                                <filename>type/avchd.png</filename>
+                            </imagetype>
+                        </state>
+                        <state name="widescreen">
+                            <imagetype name="statusimage">
+                                <filename>type/wide.png</filename>
+                            </imagetype>
+                        </state>
+                        <state name="watched">
+                            <imagetype name="statusimage">
+                                <filename>type/watched.png</filename>
+                            </imagetype>
+                        </state>
+                    </statetype>
+                    <textarea name="buttontext">
+                        <area>53,0,949,30</area>
+                    </textarea>
+                </state>
+                <state name="selectedinactive" from="active">
+                    <shape name="buttonbackground">
+                        <fill color="#cc99cc" alpha="255" />
+                    </shape>
+                </state>
+                <state name="selectedactive" from="active">
+                    <shape name="buttonbackground">
+                        <fill color="#ff9900" alpha="255" />
+                    </shape>
+                </state>
+            </statetype>
+        </buttonlist>
+    </window>
+    
+</mythuitheme>
