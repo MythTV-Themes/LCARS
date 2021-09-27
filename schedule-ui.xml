@@ -1952,7 +1952,7 @@
         </textarea>
         
         <spinbox name="priority" from="basewidespinbox">
-            <position>455,310</position>
+            <position>455,300</position>
             <template type="negative">Reduce priority by %n</template>
             <template type="zero">Normal recording priority</template>
             <template type="positive">Raise priority by %n</template>
@@ -1960,12 +1960,12 @@
         </spinbox>
         
         <buttonlist name="input" from="basewideselector">
-            <position>455,355</position>
+            <position>455,345</position>
             <helptext></helptext>
         </buttonlist>
         
         <spinbox name="startoffset" from="basewidespinbox">
-            <position>455,400</position>
+            <position>455,390</position>
             <template type="negative">Start recording %n minute(s) late</template>
             <template type="zero">Start recording on time</template>
             <template type="positive">Start recording %n minute(s) early</template>
@@ -1973,7 +1973,7 @@
         </spinbox>
         
         <spinbox name="endoffset" from="basewidespinbox">
-            <position>455,445</position>
+            <position>455,435</position>
             <template type="negative">End recording %n minute(s) early</template>
             <template type="zero">End recording on time</template>
             <template type="positive">End recording %n minute(s) late</template>
@@ -1981,21 +1981,26 @@
         </spinbox>
         
         <buttonlist name="dupmethod" from="basewideselector">
-            <position>455,490</position>
+            <position>455,480</position>
             <helptext></helptext>
         </buttonlist>
         
         <buttonlist name="dupscope" from="basewideselector">
-            <position>455,535</position>
+            <position>455,525</position>
+            <helptext></helptext>
+        </buttonlist>
+
+        <buttonlist name="autoextend" from="basewideselector">
+            <position>455,570</position>
             <helptext></helptext>
         </buttonlist>
         
         <checkbox name="ruleactive" from="basecheckbox">
-            <position>455,580</position>
+            <position>455,615</position>
         </checkbox>
         
         <textarea name="ruleactivelabel" from="basetextarea">
-            <area>500,583,300,30</area>
+            <area>500,618,300,30</area>
             <value>Recording Rule Active</value>
         </textarea>
         
